@@ -1,3 +1,9 @@
-baseURL = "http://example.org/"
-languageCode = "en-us"
-title = "My New Hugo Site"
+baseURL = "https://browniealice.github.io/wiki/"
+languageCode = "ja-JP"
+title = "Alice in the Machine - wiki"
+theme = "bootie-docs"
+publishDir = "docs"
+
+[params]
+  noCategoryLink = true
+  description    = "This is BrownieAlice's wiki."
