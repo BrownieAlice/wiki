@@ -3,7 +3,25 @@ languageCode = "ja-JP"
 title = "Alice in the Machine - wiki"
 theme = "bootie-docs"
 publishDir = "docs"
+copyright = "Copyleft (c) 2017, BrownieAlice; All rights resevesed."
 
 [params]
   noCategoryLink = true
-  description    = "This is BrownieAlice's wiki."
+  description = "This is BrownieAlice's wiki."
+  searchDomain = "https://browniealice.github.io/wiki/"
+  repositoryUrl  = "https://github.com/BrownieAlice/wiki.git"
+
+[[menu.main]]
+  name = "TechNote"
+  url  = "/technote/"
+  weight = 1
+
+[[menu.main]]
+  name = "Blog"
+  url  = "https://browniealice.github.io/blog/"
+  weight = 2
+
+[[menu.main]]
+  name = "GitHub"
+  url  = "https://github.com/BrownieAlice/"
+  weight = 3

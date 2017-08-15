@@ -1,3 +1,9 @@
+[submodule "themes/hugo-theme-learn"]
+	path = themes/hugo-theme-learn
+	url = https://github.com/matcornic/hugo-theme-learn.git
+[submodule "theme/hugo-theme-bootie-docs"]
+	path = theme/hugo-theme-bootie-docs
+	url = https://github.com/progrhyme/hugo-theme-bootie-docs.git
 [submodule "themes/bootie-docs"]
 	path = themes/bootie-docs
 	url = https://github.com/progrhyme/hugo-theme-bootie-docs.git
