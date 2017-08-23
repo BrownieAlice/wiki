@@ -45,10 +45,31 @@ Hugoは自分の思うテーマを選んでやらないと, 思ったようなHP
 テーマは [Hugo Themes|CompleteList](https://themes.gohugo.io/) に一覧になっている. 導入したいテーマが見つかったら
 
 ```bash
-git submodule add https://github.com/hoge/poyo.git themes/poyo
+git submodule add https://github.com/hoge/poyo.git themes/piyo
 ```
 
-で導入する. あとはそのテーマに合わせてフロントマターや `config.toml` を編集する.
+で導入する. あとはそのテーマに合わせてフロントマターや `config.toml` を編集する.  
+`config.toml` でテーマを競っていするには
+
+```toml
+theme = "piyo"
+```
+
+とするだけでよい. 他にもテーマ依存の設定などもしていく.
+
+## config.toml
+サイトについての情報などは基本的に `config.toml` で設定する.  
+例えば以下のようにする.
+
+```toml
+baseURL = "hoge"
+languageCode = "ja-JP"
+title = "poyo"
+theme = "piyo"
+publishDir = "docs"
+disqusShortname = "foo"
+copyright = "Copyleft; 2017-2017, BrownieAlice. All rights reversed."
+```
 
 # 環境構築
 ## Blog
