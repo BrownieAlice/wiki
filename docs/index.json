@@ -1,0 +1,57 @@
+[
+{
+	"uri": "https://browniealice.github.io/wiki/technote/hugo/",
+	"title": "Hugo",
+	"tags": [],
+	"description": "",
+	"content": " Hugoについて Hugo は静的サイトジェネレータの1つ. Markdownで記事を書いて所定のプログラムを動かせば静的なサイトが生成される.\n直接HTMLを叩かなくて済むので楽. またGitHub Pagesを用いれば簡単にWebサイトを公開できるので便利.\nBlog と wiki もHugoを用いて作成している\n"
+},
+{
+	"uri": "https://browniealice.github.io/wiki/technote/",
+	"title": "TechNote",
+	"tags": [],
+	"description": "",
+	"content": " TechNoteについて プログラミングやTeX関連などの事項をまとめて行きます.\n特にそれなりの頻度で用いる設定などを備忘録的に記載していきます.\n"
+},
+{
+	"uri": "https://browniealice.github.io/wiki/_header/",
+	"title": "_Header",
+	"tags": [],
+	"description": "",
+	"content": "Alice in the Machine - wiki\n"
+},
+{
+	"uri": "https://browniealice.github.io/wiki/technote/hugo/hugo_how_use/",
+	"title": "Hugo使い方",
+	"tags": [],
+	"description": "",
+	"content": " Hugoについて 静的Webページ変換ツールの1つ. 他にもJekyllやHexoなどが有名.\n基本的にはMarkdownで記事を書き, Hugoを起動して変換してもらって所定の静的なWebページを作る. スタイルなどを調整してやればBlogみたいのができる.\nBlogとwikiについて ブログはHugoを用いてGitHub Pages上で公開している. BlogはAlice in the Machine - Blogにある.\nwikiも同様にしてGitHub Pages上で公開している. wikiはAlice in the Machine - wikiにある.\nHugoインストール Install Hugoを参考にすれば良い. Ubuntuのバイナリインストールでいいなら\nsnap install hugo  で完了.\nHugo初期設定 既にレポジトリがある場合やる必要はないが, 新たにWebページを作成するなら必要.\nHugo new site hoge  で hoge ディレクトリに新たなHugoのワークスペースができる. あとは hoge ディレクトリに移動して以下をやっておく.\ngit init . git remote add origin https://github.com/\u0026lt;user-name\u0026gt;/hoge.git git add * git commit -m \u0026quot;Init Hugo.\u0026quot; git push -u origin master  こうすれば後は普通に記事制作するだけで済む.\nテーマ Hugoは自分の思うテーマを選んでやらないと, 思ったようなHPはできない. テーマは Hugo Themes|CompleteList に一覧になっている. 導入したいテーマが見つかったら\ngit submodule add https://github.com/hoge/poyo.git themes/piyo  で導入する. あとはそのテーマに合わせてフロントマターや config.toml を編集する.\nconfig.toml でテーマを競っていするには\ntheme = \u0026quot;piyo\u0026quot;  とするだけでよい. 他にもテーマ依存の設定などもしていく.\nconfig.toml サイトについての情報などは基本的に config.toml で設定する.\n例えば以下のようにする.\nbaseURL = \u0026quot;hoge\u0026quot; languageCode = \u0026quot;ja-JP\u0026quot; title = \u0026quot;poyo\u0026quot; theme = \u0026quot;piyo\u0026quot; publishDir = \u0026quot;docs\u0026quot; disqusShortname = \u0026quot;foo\u0026quot; copyright = \u0026quot;Copyleft; 2017-2017, BrownieAlice. All rights reversed.\u0026quot;  環境構築 Blog すでに中身はgit上で公開しているので\ncd ~/Document git clone https://github.com/BrownieAlice/blog.git  でよい. あとは ~/Document/blog 上で作業する.\nwiki Blogと同様.\ncd ~/Document git clone https://github.com/BrownieAlice/wiki.git  で, あとは ~/Document/wiki 上で作業する.\n記事の制作 以下が一連の動作.\nhugo new post/hoge.md hugo server -D -w hugo undraft content/post/hoge.md hugo git add * git commit -m \u0026quot;new post hoge\u0026quot; git push origin master  hugo server でローカルにサーバーを立ち上げてブラウザ上で確認できるようになる. Blogなら http://localhost:1313/blog がそのリンク先.\nそして下書き記事を正式な記事にしてコンパイルし変更をコミットする.\nカテゴリー カテゴリとしてpoとpopoを追加する場合, 記事のフロントマターを以下のように設定する.\n--- title: \u0026quot;hoge\u0026quot; date: piyo categories : - \u0026quot;po\u0026quot; - \u0026quot;popo\u0026quot; ---  参考サイト  GitHub Pagesでブログ立ち上げ - Hugoを使う GitHub Pagesの新機能、ソース設定が地味にいい 静的サイトジェネレータHugoを使ったサイト構築（コンテンツ編１） HugoとGitHub Pagesで静的サイトを公開する - Qiita Hugo + Github Pagesでブログを公開してみた - Qiita  "
+},
+{
+	"uri": "https://browniealice.github.io/wiki/",
+	"title": "Alice in the Machine - wiki",
+	"tags": [],
+	"description": "",
+	"content": " Alice in the Machine - wiki このサイトについて このサイトは私(BrownieAlice)がプログラミングやレポート製作などで調べた内容などをまとめていくwikiです.\n基本的には私個人が使うためのものです.\n"
+},
+{
+	"uri": "https://browniealice.github.io/wiki/categories/",
+	"title": "Categories",
+	"tags": [],
+	"description": "",
+	"content": ""
+},
+{
+	"uri": "https://browniealice.github.io/wiki/categories/hugo/",
+	"title": "Hugo",
+	"tags": [],
+	"description": "",
+	"content": ""
+},
+{
+	"uri": "https://browniealice.github.io/wiki/tags/",
+	"title": "Tags",
+	"tags": [],
+	"description": "",
+	"content": ""
+}]

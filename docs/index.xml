@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes" ?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>_index on Alice in the Machine - wiki</title>
+    <title>Alice in the Machine - wiki</title>
     <link>https://browniealice.github.io/wiki/</link>
-    <description>Recent content in _index on Alice in the Machine - wiki</description>
+    <description>Recent content on Alice in the Machine - wiki</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>ja-JP</language>
     <copyright>Copyleft (c) 2017, BrownieAlice; All rights resevesed.</copyright>
@@ -11,6 +11,15 @@
     
 	<atom:link href="https://browniealice.github.io/wiki/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>_Header</title>
+      <link>https://browniealice.github.io/wiki/_header/</link>
+      <pubDate>Thu, 24 Aug 2017 13:53:07 +0900</pubDate>
+      
+      <guid>https://browniealice.github.io/wiki/_header/</guid>
+      <description>Alice in the Machine - wiki</description>
+    </item>
     
     <item>
       <title>Hugo使い方</title>

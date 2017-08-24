@@ -4,14 +4,15 @@ date: 2017-08-15T22:15:02+09:00
 categories:
  - "Hugo"
 ---
-# Hugoについて
+
+## Hugoについて
 静的Webページ変換ツールの1つ. 他にも[Jekyll](https://jekyllrb-ja.github.io/)や[Hexo](https://hexo.io/)などが有名.  
 基本的にはMarkdownで記事を書き, Hugoを起動して変換してもらって所定の静的なWebページを作る. スタイルなどを調整してやればBlogみたいのができる.  
 
-# Blogとwikiについて
+## Blogとwikiについて
 ブログは[Hugo](https://gohugo.io/)を用いてGitHub Pages上で公開している. Blogは[Alice in the Machine - Blog](https://browniealice.github.io/blog/)にある.  
 wikiも同様にしてGitHub Pages上で公開している. wikiは[Alice in the Machine - wiki](https://browniealice.github.io/wiki/)にある.  
-# Hugoインストール
+## Hugoインストール
 [Install Hugo](https://gohugo.io/getting-started/installing)を参考にすれば良い.
 Ubuntuのバイナリインストールでいいなら
 
@@ -21,7 +22,7 @@ snap install hugo
 
 で完了.
 
-## Hugo初期設定
+### Hugo初期設定
 既にレポジトリがある場合やる必要はないが, 新たにWebページを作成するなら必要.
 
 ```bash
@@ -40,7 +41,7 @@ git push -u origin master
 
 こうすれば後は普通に記事制作するだけで済む.
 
-## テーマ
+### テーマ
 Hugoは自分の思うテーマを選んでやらないと, 思ったようなHPはできない.
 テーマは [Hugo Themes|CompleteList](https://themes.gohugo.io/) に一覧になっている. 導入したいテーマが見つかったら
 
@@ -57,7 +58,7 @@ theme = "piyo"
 
 とするだけでよい. 他にもテーマ依存の設定などもしていく.
 
-## config.toml
+### config.toml
 サイトについての情報などは基本的に `config.toml` で設定する.  
 例えば以下のようにする.
 
@@ -71,8 +72,8 @@ disqusShortname = "foo"
 copyright = "Copyleft; 2017-2017, BrownieAlice. All rights reversed."
 ```
 
-# 環境構築
-## Blog
+## 環境構築
+### Blog
 すでに中身はgit上で公開しているので
 
 ```bash
@@ -85,7 +86,7 @@ git clone https://github.com/BrownieAlice/blog.git
 `~/Document/blog`
 上で作業する.
 
-## wiki
+### wiki
 Blogと同様.
 
 ```bash
@@ -95,7 +96,7 @@ git clone https://github.com/BrownieAlice/wiki.git
 
 で, あとは `~/Document/wiki` 上で作業する.
 
-# 記事の制作
+## 記事の制作
 以下が一連の動作.
 
 ```bash
@@ -113,7 +114,7 @@ git push origin master
 Blogなら [http://localhost:1313/blog](http://localhost:1313/blog) がそのリンク先.  
 そして下書き記事を正式な記事にしてコンパイルし変更をコミットする.
 
-## カテゴリー
+### カテゴリー
 カテゴリとして`po`と`popo`を追加する場合, 記事のフロントマターを以下のように設定する.
 
 ```yaml:hoge.md
@@ -126,7 +127,7 @@ categories :
 ---
 ```
 
-# 参考サイト
+## 参考サイト
 - [GitHub Pagesでブログ立ち上げ - Hugoを使う](https://www.kaitoy.xyz/2015/08/28/using-hugo/)
 - [GitHub Pagesの新機能、ソース設定が地味にいい](https://www.kaitoy.xyz/2016/08/18/simpler-github-pages-publishing/)
 - [静的サイトジェネレータHugoを使ったサイト構築（コンテンツ編１）](http://staff.feedtailor.jp/2016/05/18/hugo_06/)

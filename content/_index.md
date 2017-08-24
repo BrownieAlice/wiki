@@ -1,5 +1,5 @@
 ---
-title: "_index"
+title: "Alice in the Machine - wiki"
 date: 2017-08-15T21:04:33+09:00
 ---
 

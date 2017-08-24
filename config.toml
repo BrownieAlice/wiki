@@ -1,27 +1,34 @@
 baseURL = "https://browniealice.github.io/wiki/"
 languageCode = "ja-JP"
 title = "Alice in the Machine - wiki"
-theme = "bootie-docs"
+theme = "docdock"
 publishDir = "docs"
+footer = "true"
 copyright = "Copyleft (c) 2017, BrownieAlice; All rights resevesed."
 
-[params]
-  noCategoryLink = true
-  description = "This is BrownieAlice's wiki."
-  searchDomain = "https://browniealice.github.io/wiki/"
-  repositoryUrl  = "https://github.com/BrownieAlice/wiki.git"
+[outputs]
+  home = [ "HTML", "RSS", "JSON"]
 
-[[menu.main]]
-  name = "TechNote"
-  url  = "/technote/"
-  weight = 1
-
-[[menu.main]]
+[[menu.shortcuts]]
+  pre = "<h3>Links</h3>"
+  identifier = "links"
+[[menu.shortcuts]]
   name = "Blog"
-  url  = "https://browniealice.github.io/blog/"
-  weight = 2
-
-[[menu.main]]
-  name = "GitHub"
-  url  = "https://github.com/BrownieAlice/"
-  weight = 3
+  url = "https://browniealice.github.io/blog/"
+  weight = 30
+  identifier = "blog"
+[[menu.shortcuts]]
+  name = "wiki"
+  url = "https://browniealice.github.io/wiki/"
+  weight = 31
+  identifier = "wiki"
+[[menu.shortcuts]]
+  name = "Github"
+  url = "https://github.com/BrownieAlice/"
+  weight = 32
+  identifier = "github"
+[[menu.shortcuts]]
+  name = "Repo"
+  url = "https://github.com/BrownieAlice/wiki.git"
+  weight = 33
+  identifier = "repo"
