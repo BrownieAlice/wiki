@@ -118,10 +118,30 @@ git push -u origin master
 <p>Hugoは自分の思うテーマを選んでやらないと, 思ったようなHPはできない.
 テーマは <a href="https://themes.gohugo.io/">Hugo Themes|CompleteList</a> に一覧になっている. 導入したいテーマが見つかったら</p>
 
-<pre><code class="language-bash">git submodule add https://github.com/hoge/poyo.git themes/poyo
+<pre><code class="language-bash">git submodule add https://github.com/hoge/poyo.git themes/piyo
 </code></pre>
 
-<p>で導入する. あとはそのテーマに合わせてフロントマターや <code>config.toml</code> を編集する.</p>
+<p>で導入する. あとはそのテーマに合わせてフロントマターや <code>config.toml</code> を編集する.<br />
+<code>config.toml</code> でテーマを競っていするには</p>
+
+<pre><code class="language-toml">theme = &quot;piyo&quot;
+</code></pre>
+
+<p>とするだけでよい. 他にもテーマ依存の設定などもしていく.</p>
+
+<h2 id="config-toml">config.toml</h2>
+
+<p>サイトについての情報などは基本的に <code>config.toml</code> で設定する.<br />
+例えば以下のようにする.</p>
+
+<pre><code class="language-toml">baseURL = &quot;hoge&quot;
+languageCode = &quot;ja-JP&quot;
+title = &quot;poyo&quot;
+theme = &quot;piyo&quot;
+publishDir = &quot;docs&quot;
+disqusShortname = &quot;foo&quot;
+copyright = &quot;Copyleft; 2017-2017, BrownieAlice. All rights reversed.&quot;
+</code></pre>
 
 <h1 id="環境構築">環境構築</h1>
 
@@ -212,6 +232,7 @@ categories :
 <ul>
 <li><a href="#hugo初期設定">Hugo初期設定</a></li>
 <li><a href="#テーマ">テーマ</a></li>
+<li><a href="#config-toml">config.toml</a></li>
 </ul></li>
 <li><a href="#環境構築">環境構築</a>
 <ul>
