@@ -23,7 +23,7 @@ copyright = "Copyleft (c) 2017, BrownieAlice; All rights resevesed."
   weight = 31
   identifier = "wiki"
 [[menu.shortcuts]]
-  name = "Github"
+  name = "GitHub"
   url = "https://github.com/BrownieAlice/"
   weight = 32
   identifier = "github"
