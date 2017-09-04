@@ -284,6 +284,11 @@
 <li><a href="#hugo初期設定">Hugo初期設定</a></li>
 <li><a href="#テーマ">テーマ</a></li>
 <li><a href="#config-toml">config.toml</a></li>
+<li><a href="#github-pages">GitHub Pages</a>
+<ul>
+<li><a href="#giuhub側">GiuHub側</a></li>
+<li><a href="#hugo側">Hugo側</a></li>
+</ul></li>
 </ul></li>
 <li><a href="#環境構築">環境構築</a>
 <ul>
@@ -317,7 +322,7 @@
 <h2 id="hugoについて">Hugoについて</h2>
 
 <p>静的Webページ変換ツールの1つ. 他にも<a href="https://jekyllrb-ja.github.io/">Jekyll</a>や<a href="https://hexo.io/">Hexo</a>などが有名.<br />
-基本的にはMarkdownで記事を書き, Hugoを起動して変換してもらって所定の静的なWebページを作る. スタイルなどを調整してやればBlogみたいのができる.</p>
+基本的にはMarkdownで記事を書き, Hugoを起動して変換してもらって所定の静的なWebページを作る. スタイルなどを調整してやればBlogみたいなWebページもできる.</p>
 
 <h2 id="blogとwikiについて">Blogとwikiについて</h2>
 
@@ -354,14 +359,14 @@ git push -u origin master
 
 <h3 id="テーマ">テーマ</h3>
 
-<p>Hugoは自分の思うテーマを選んでやらないと, 思ったようなHPはできない.
+<p>Hugoは自分の思うテーマを選んでやらないと, 思ったようなWebページはできない.
 テーマは <a href="https://themes.gohugo.io/">Hugo Themes|CompleteList</a> に一覧になっている. 導入したいテーマが見つかったら</p>
 
 <pre><code class="language-bash">git submodule add https://github.com/hoge/poyo.git themes/piyo
 </code></pre>
 
 <p>で導入する. あとはそのテーマに合わせてフロントマターや <code>config.toml</code> を編集する.<br />
-<code>config.toml</code> でテーマを競っていするには</p>
+<code>config.toml</code> でテーマを設定するには</p>
 
 <pre><code class="language-toml">theme = &quot;piyo&quot;
 </code></pre>
@@ -382,6 +387,24 @@ disqusShortname = &quot;foo&quot;
 copyright = &quot;Copyleft; 2017-2017, BrownieAlice. All rights reversed.&quot;
 </code></pre>
 
+<h3 id="github-pages">GitHub Pages</h3>
+
+<p>Github Pagesを用いてWebサイトを公開するなら少し設定を変更する必要がある.</p>
+
+<h4 id="giuhub側">GiuHub側</h4>
+
+<p>リポジトリのページを開いて <code>Settings -&gt; GutHub Pages -&gt; Source -&gt; master branch /docs folder</code> と設定して保存する.<br />
+するとmasterブランチの <code>/docs</code> 以下がWebページだとみなしてWebサイトにしてくれる.</p>
+
+<h4 id="hugo側">Hugo側</h4>
+
+<p><code>config.toml</code> を少しいじる.</p>
+
+<pre><code class="language-toml">publishDir = &quot;docs&quot;
+</code></pre>
+
+<p>こうすると <code>/docs</code> 以下にHTMLなどが生成されるようになる.</p>
+
 <h2 id="環境構築">環境構築</h2>
 
 <h3 id="blog">Blog</h3>
@@ -390,6 +413,8 @@ copyright = &quot;Copyleft; 2017-2017, BrownieAlice. All rights reversed.&quot;
 
 <pre><code class="language-bash">cd ~/Document
 git clone https://github.com/BrownieAlice/blog.git
+cd blog
+git submodule update --init
 </code></pre>
 
 <p>でよい.
@@ -403,6 +428,8 @@ git clone https://github.com/BrownieAlice/blog.git
 
 <pre><code class="language-bash">cd ~/Document
 git clone https://github.com/BrownieAlice/wiki.git
+cd wiki
+git submodule update --init
 </code></pre>
 
 <p>で, あとは <code>~/Document/wiki</code> 上で作業する.</p>
@@ -429,7 +456,7 @@ Blogなら <a href="http://localhost:1313/blog">http://localhost:1313/blog</a> �
 
 <p>カテゴリとして<code>po</code>と<code>popo</code>を追加する場合, 記事のフロントマターを以下のように設定する.</p>
 
-<pre><code class="language-yaml:hoge.md">---
+<pre><code class="language-yaml">---
 title: &quot;hoge&quot;
 date: piyo
 categories :

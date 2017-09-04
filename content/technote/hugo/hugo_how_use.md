@@ -7,7 +7,7 @@ categories:
 
 ## Hugoについて
 静的Webページ変換ツールの1つ. 他にも[Jekyll](https://jekyllrb-ja.github.io/)や[Hexo](https://hexo.io/)などが有名.  
-基本的にはMarkdownで記事を書き, Hugoを起動して変換してもらって所定の静的なWebページを作る. スタイルなどを調整してやればBlogみたいのができる.  
+基本的にはMarkdownで記事を書き, Hugoを起動して変換してもらって所定の静的なWebページを作る. スタイルなどを調整してやればBlogみたいなWebページもできる.  
 
 ## Blogとwikiについて
 ブログは[Hugo](https://gohugo.io/)を用いてGitHub Pages上で公開している. Blogは[Alice in the Machine - Blog](https://browniealice.github.io/blog/)にある.  
@@ -42,7 +42,7 @@ git push -u origin master
 こうすれば後は普通に記事制作するだけで済む.
 
 ### テーマ
-Hugoは自分の思うテーマを選んでやらないと, 思ったようなHPはできない.
+Hugoは自分の思うテーマを選んでやらないと, 思ったようなWebページはできない.
 テーマは [Hugo Themes|CompleteList](https://themes.gohugo.io/) に一覧になっている. 導入したいテーマが見つかったら
 
 ```bash
@@ -50,7 +50,7 @@ git submodule add https://github.com/hoge/poyo.git themes/piyo
 ```
 
 で導入する. あとはそのテーマに合わせてフロントマターや `config.toml` を編集する.  
-`config.toml` でテーマを競っていするには
+`config.toml` でテーマを設定するには
 
 ```toml
 theme = "piyo"
@@ -72,6 +72,22 @@ disqusShortname = "foo"
 copyright = "Copyleft; 2017-2017, BrownieAlice. All rights reversed."
 ```
 
+### GitHub Pages
+Github Pagesを用いてWebサイトを公開するなら少し設定を変更する必要がある.
+
+#### GiuHub側
+リポジトリのページを開いて `Settings -> GutHub Pages -> Source -> master branch /docs folder` と設定して保存する.  
+するとmasterブランチの `/docs` 以下がWebページだとみなしてWebサイトにしてくれる.
+
+#### Hugo側
+`config.toml` を少しいじる.
+
+```toml
+publishDir = "docs"
+```
+
+こうすると `/docs` 以下にHTMLなどが生成されるようになる.
+
 ## 環境構築
 ### Blog
 すでに中身はgit上で公開しているので
@@ -79,6 +95,8 @@ copyright = "Copyleft; 2017-2017, BrownieAlice. All rights reversed."
 ```bash
 cd ~/Document
 git clone https://github.com/BrownieAlice/blog.git
+cd blog
+git submodule update --init
 ```
 
 でよい.
@@ -92,6 +110,8 @@ Blogと同様.
 ```bash
 cd ~/Document
 git clone https://github.com/BrownieAlice/wiki.git
+cd wiki
+git submodule update --init
 ```
 
 で, あとは `~/Document/wiki` 上で作業する.
@@ -117,7 +137,7 @@ Blogなら [http://localhost:1313/blog](http://localhost:1313/blog) がそのリ
 ### カテゴリー
 カテゴリとして`po`と`popo`を追加する場合, 記事のフロントマターを以下のように設定する.
 
-```yaml:hoge.md
+```yaml
 ---
 title: "hoge"
 date: piyo

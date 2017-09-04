@@ -28,7 +28,7 @@
       
       <guid>https://browniealice.github.io/wiki/technote/hugo/hugo_how_use/</guid>
       <description>Hugoについて 静的Webページ変換ツールの1つ. 他にもJekyllやHexoなどが有名.
-基本的にはMarkdownで記事を書き, Hugoを起動して変換してもらって所定の静的なWebページを作る. スタイルなどを調整してやればBlogみたいのができる.
+基本的にはMarkdownで記事を書き, Hugoを起動して変換してもらって所定の静的なWebページを作る. スタイルなどを調整してやればBlogみたいなWebページもできる.
 Blogとwikiについて ブログはHugoを用いてGitHub Pages上で公開している. BlogはAlice in the Machine - Blogにある.
 wikiも同様にしてGitHub Pages上で公開している. wikiはAlice in the Machine - wikiにある.
 Hugoインストール Install Hugoを参考にすれば良い. Ubuntuのバイナリインストールでいいなら
