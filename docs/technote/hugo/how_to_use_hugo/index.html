@@ -7,7 +7,7 @@
     <meta name="description" content="">
 
 
-    <title>Hugo :: Alice in the Machine - wiki</title>
+    <title>Hugo使い方 :: Alice in the Machine - wiki</title>
     <link rel="shortcut icon" href="/wiki/images/favicon.png" type="image/x-icon" />
     <link href="/wiki/css/nucleus.css" rel="stylesheet">
     <link href="/wiki/css/font-awesome.min.css" rel="stylesheet">
@@ -31,7 +31,7 @@
     
 
   </head>
-  <body class="" data-url="/wiki/categories/hugo/">
+  <body class="" data-url="/wiki/technote/hugo/how_to_use_hugo/">
     <nav id="sidebar" class="">
 
 
@@ -80,7 +80,7 @@
   
     
     <li data-nav-id="/wiki/technote/" class="dd-item 
-        
+        parent
         
         
         ">
@@ -91,7 +91,7 @@
         
 
           
-            <i class="fa fa-angle-right fa-lg category-icon"></i>
+            <i class="fa fa-angle-down fa-lg category-icon"></i>
           
 
         
@@ -116,7 +116,7 @@
   
     
     <li data-nav-id="/wiki/technote/hugo/" class="dd-item 
-        
+        parent
         
         
         ">
@@ -127,7 +127,7 @@
         
 
           
-            <i class="fa fa-angle-right fa-lg category-icon"></i>
+            <i class="fa fa-angle-down fa-lg category-icon"></i>
           
 
         
@@ -150,7 +150,7 @@
   
     
       <li data-nav-id="/wiki/technote/hugo/how_to_use_hugo/" class="dd-item
-     
+     active
       ">
         <a href="/wiki/technote/hugo/how_to_use_hugo/">
         <span>Hugo使い方</span> 
@@ -271,14 +271,58 @@
                 <span class="links">
                 
 
- Hugo
+
+
+
+
+
+
+
+
+
+ <a href='/wiki/'>Alice in the Machine - wiki</a> > <a href='/wiki/technote/'>TechNote</a> > <a href='/wiki/technote/hugo/'>Hugo</a> > Hugo使い方
+
+ 
+
+ 
+
+ 
 
    
                 </span>
             </div>
             <div class="progress">
     <div class="wrapper">
-
+<nav id="TableOfContents">
+<ul>
+<li>
+<ul>
+<li><a href="#hugoについて">Hugoについて</a></li>
+<li><a href="#blogとwikiについて">Blogとwikiについて</a></li>
+<li><a href="#hugoインストール">Hugoインストール</a>
+<ul>
+<li><a href="#hugo初期設定">Hugo初期設定</a></li>
+<li><a href="#テーマ">テーマ</a></li>
+<li><a href="#config-toml">config.toml</a></li>
+<li><a href="#github-pages">GitHub Pages</a>
+<ul>
+<li><a href="#giuhub側">GiuHub側</a></li>
+<li><a href="#hugo側">Hugo側</a></li>
+</ul></li>
+</ul></li>
+<li><a href="#環境構築">環境構築</a>
+<ul>
+<li><a href="#blog">Blog</a></li>
+<li><a href="#wiki">wiki</a></li>
+</ul></li>
+<li><a href="#記事の制作">記事の制作</a>
+<ul>
+<li><a href="#カテゴリー">カテゴリー</a></li>
+</ul></li>
+<li><a href="#参考サイト">参考サイト</a></li>
+</ul></li>
+</ul>
+</nav>
     </div>
 </div>
 
@@ -287,7 +331,7 @@
         
         <div id="body-inner">
           
-            <h1>Hugo</h1>
+            <h1>Hugo使い方</h1>
           
 
 
@@ -295,93 +339,166 @@
 
 
 
+<h2 id="hugoについて">Hugoについて</h2>
+
+<p>静的Webページ変換ツールの1つ. 他にも<a href="https://jekyllrb-ja.github.io/">Jekyll</a>や<a href="https://hexo.io/">Hexo</a>などが有名.<br />
+基本的にはMarkdownで記事を書き, Hugoを起動して変換してもらって所定の静的なWebページを作る. スタイルなどを調整してやればBlogみたいなWebページもできる.</p>
+
+<h2 id="blogとwikiについて">Blogとwikiについて</h2>
+
+<p>ブログは<a href="https://gohugo.io/">Hugo</a>を用いてGitHub Pages上で公開している. Blogは<a href="https://browniealice.github.io/blog/">Alice in the Machine - Blog</a>にある.<br />
+wikiも同様にしてGitHub Pages上で公開している. wikiは<a href="https://browniealice.github.io/wiki/">Alice in the Machine - wiki</a>にある.</p>
+
+<h2 id="hugoインストール">Hugoインストール</h2>
+
+<p><a href="https://gohugo.io/getting-started/installing">Install Hugo</a>を参考にすれば良い.
+Ubuntuのバイナリインストールでいいなら</p>
+
+<pre><code class="language-bash">snap install hugo
+</code></pre>
+
+<p>で完了.</p>
+
+<h3 id="hugo初期設定">Hugo初期設定</h3>
+
+<p>既にレポジトリがある場合やる必要はないが, 新たにWebページを作成するなら必要.</p>
+
+<pre><code class="language-bash">Hugo new site hoge
+</code></pre>
+
+<p>で <code>hoge</code> ディレクトリに新たなHugoのワークスペースができる. あとは <code>hoge</code> ディレクトリに移動して以下をやっておく.</p>
+
+<pre><code class="language-bash">git init .
+git remote add origin https://github.com/&lt;user-name&gt;/hoge.git
+git add *
+git commit -m &quot;Init Hugo.&quot;
+git push -u origin master
+</code></pre>
+
+<p>こうすれば後は普通に記事制作するだけで済む.</p>
+
+<h3 id="テーマ">テーマ</h3>
+
+<p>Hugoは自分の思うテーマを選んでやらないと, 思ったようなWebページはできない.
+テーマは <a href="https://themes.gohugo.io/">Hugo Themes|CompleteList</a> に一覧になっている. 導入したいテーマが見つかったら</p>
+
+<pre><code class="language-bash">git submodule add https://github.com/hoge/poyo.git themes/piyo
+</code></pre>
+
+<p>で導入する. あとはそのテーマに合わせてフロントマターや <code>config.toml</code> を編集する.<br />
+<code>config.toml</code> でテーマを設定するには</p>
+
+<pre><code class="language-toml">theme = &quot;piyo&quot;
+</code></pre>
+
+<p>とするだけでよい. 他にもテーマ依存の設定などもしていく.</p>
+
+<h3 id="config-toml">config.toml</h3>
+
+<p>サイトについての情報などは基本的に <code>config.toml</code> で設定する.<br />
+例えば以下のようにする.</p>
+
+<pre><code class="language-toml">baseURL = &quot;hoge&quot;
+languageCode = &quot;ja-JP&quot;
+title = &quot;poyo&quot;
+theme = &quot;piyo&quot;
+publishDir = &quot;docs&quot;
+disqusShortname = &quot;foo&quot;
+copyright = &quot;Copyleft; 2017-2017, BrownieAlice. All rights reversed.&quot;
+</code></pre>
+
+<h3 id="github-pages">GitHub Pages</h3>
+
+<p>Github Pagesを用いてWebサイトを公開するなら少し設定を変更する必要がある.</p>
+
+<h4 id="giuhub側">GiuHub側</h4>
+
+<p>リポジトリのページを開いて <code>Settings -&gt; GutHub Pages -&gt; Source -&gt; master branch /docs folder</code> と設定して保存する.<br />
+するとmasterブランチの <code>docs</code> フォルダ 以下がWebページだとみなしてWebサイトにしてくれる.</p>
+
+<h4 id="hugo側">Hugo側</h4>
+
+<p><code>config.toml</code> を少しいじる.</p>
+
+<pre><code class="language-toml">publishDir = &quot;docs&quot;
+</code></pre>
+
+<p>こうすると <code>docs</code> フォルダ以下にHTMLなどが生成されるようになる.</p>
+
+<h2 id="環境構築">環境構築</h2>
+
+<h3 id="blog">Blog</h3>
+
+<p>すでに中身はgit上で公開しているので</p>
+
+<pre><code class="language-bash">cd ~/Document
+git clone https://github.com/BrownieAlice/blog.git
+cd blog
+git submodule update --init
+</code></pre>
+
+<p>でよい.
+あとは
+<code>~/Document/blog</code>
+上で作業する.</p>
+
+<h3 id="wiki">wiki</h3>
+
+<p>Blogと同様.</p>
+
+<pre><code class="language-bash">cd ~/Document
+git clone https://github.com/BrownieAlice/wiki.git
+cd wiki
+git submodule update --init
+</code></pre>
+
+<p>で, あとは <code>~/Document/wiki</code> 上で作業する.</p>
+
+<h2 id="記事の制作">記事の制作</h2>
+
+<p>以下が一連の動作.</p>
+
+<pre><code class="language-bash">hugo new post/hoge.md
+hugo server -D -w
+hugo undraft content/post/hoge.md
+hugo
+git add *
+git commit -m &quot;new post hoge&quot;
+git push origin master
+</code></pre>
+
+<p><code>hugo server</code>
+でローカルにサーバーを立ち上げてブラウザ上で確認できるようになる.
+Blogなら <a href="http://localhost:1313/blog">http://localhost:1313/blog</a> がそのリンク先.<br />
+そして下書き記事を正式な記事にしてコンパイルし変更をコミットする.</p>
+
+<h3 id="カテゴリー">カテゴリー</h3>
+
+<p>カテゴリとして<code>po</code>と<code>popo</code>を追加する場合, 記事のフロントマターを以下のように設定する.</p>
+
+<pre><code class="language-yaml">---
+title: &quot;hoge&quot;
+date: piyo
+categories :
+ - &quot;po&quot;
+ - &quot;popo&quot;
+---
+</code></pre>
+
+<h2 id="参考サイト">参考サイト</h2>
+
+<ul>
+<li><a href="https://www.kaitoy.xyz/2015/08/28/using-hugo/">GitHub Pagesでブログ立ち上げ - Hugoを使う</a></li>
+<li><a href="https://www.kaitoy.xyz/2016/08/18/simpler-github-pages-publishing/">GitHub Pagesの新機能、ソース設定が地味にいい</a></li>
+<li><a href="http://staff.feedtailor.jp/2016/05/18/hugo_06/">静的サイトジェネレータHugoを使ったサイト構築（コンテンツ編１）</a></li>
+<li><a href="http://qiita.com/satzz/items/e24bd703fc04fb45f7ef">HugoとGitHub Pagesで静的サイトを公開する - Qiita</a></li>
+<li><a href="http://qiita.com/eichann/items/4fe61b8b9bbafcfbe847">Hugo + Github Pagesでブログを公開してみた - Qiita</a></li>
+</ul>
+
+
 <footer class=" footline" >
 	
 </footer>
-
-
-
-	
-
-	<div class="extra-pagination inner">
-	<nav class="pagination" role="navigation">
-	
-	<span class="page-number">Page 1 on 1</span>
-	
-</nav>
-
-	</div>
-
-	
-	   <article class="post technote">
-    <header class="post-header">
-        <h2 class="post-title"><a href="/wiki/technote/hugo/how_to_use_hugo/">Hugo使い方</a></h2>
-    </header>
-    <section class="post-excerpt">
-        <p>Hugoについて 静的Webページ変換ツールの1つ. 他にもJekyllやHexoなどが有名.
-基本的にはMarkdownで記事を書き, Hugoを起動して変換してもらって所定の静的なWebページを作る. スタイルなどを調整してやればBlogみたいなWebページもできる.
-Blogとwikiについて ブログはHugoを用いてGitHub Pages上で公開している. BlogはAlice in the Machine - Blogにある.
-wikiも同様にしてGitHub Pages上で公開している. wikiはAlice in the Machine - wikiにある.
-Hugoインストール Install Hugoを参考にすれば良い. Ubuntuのバイナリインストールでいいなら
-snap install hugo  で完了.
-Hugo初期設定 既にレポジトリがある場合やる必要はないが, 新たにWebページを作成するなら必要.
-Hugo new site hoge  で hoge ディレクトリに新たなHugoのワークスペースができる. あとは hoge ディレクトリに移動して以下をやっておく.
-git init . git remote add origin https://github.com/&lt;user-name&gt;/hoge.git git add * git commit -m &quot;Init Hugo.&quot; git push -u origin master  こうすれば後は普通に記事制作するだけで済む. <a class="read-more" href="/wiki/technote/hugo/how_to_use_hugo/">&raquo;</a></p>
-    </section>
-    <footer class=" footline" >
-         
-        
-
-        
-        
-
-    </footer>
-</article>
-
-
-
-
-	
-	   <article class="post technote">
-    <header class="post-header">
-        <h2 class="post-title"><a href="/wiki/technote/hugo/setting_for_robust/">Robust設定</a></h2>
-    </header>
-    <section class="post-excerpt">
-        <p>Robustについて RobustはHugoのテーマの1つ. デモページのようなブログ風のページを作ることができる.
-リポジトリは https://github.com/dim0627/hugo_theme_robust.git にある.
-標準設定 HugoやRobust自体の標準で設定する必要のある事.
-タグ/カテゴリ/シリーズの利用 タグ/カテゴリ/シリーズの分類機能を使うには config.toml を少し編集してやる必要がある. 以下を追記する.
-[taxonomies] tag = &quot;tags&quot; category = &quot;categories&quot; series = &quot;series&quot;  また, 記事にカテゴリを割り当てる際はフロントマターを以下のように設定する.
---- title: &quot;hoge&quot; date: piyo categories : - &quot;po&quot; - &quot;popo&quot; ---  記事要約部分の日本語対応 デフォルトだと要約されて表示される記事の文面がかなり長めに表示される. それを日本語用に適切な長さにするためには config.toml に以下を追記する.
-hasCJKLanguage = true  サムネイル設定 記事のサムネイルも設定できる.
-デフォルトサムネイル お好みの画像をjpgファイルにして static/images/default.jpg におけば良い.
-カスタムサムネイル 各記事に個別にサムネイルを設定することもできる. 記事のフロントマターに以下を追記すれば良い.
-thumbnail: &quot;images/hoge/thumbnail.jpg&quot;  すると static/images/hoge/thumnail.jpg がサムネイル画像になる. サムネイル画像自体はpngでもsvgでも入れてくれる. 要はブラウザ側がそのファイル形式に対応できているかによる.
-目次の割当 記事の最初に目次をつけることもできる. デフォルトでは挿入されないが, フロントマターに以下を追記すると目次が表示されるようになる. <a class="read-more" href="/wiki/technote/hugo/setting_for_robust/">&raquo;</a></p>
-    </section>
-    <footer class=" footline" >
-         
-        
-
-        
-        
-
-    </footer>
-</article>
-
-
-
-
-	
-
-	<div style="margin-bottom:2rem"></div>
-
-	<nav class="pagination" role="navigation">
-	
-	<span class="page-number">Page 1 on 1</span>
-	
-</nav>
-
 
 
 
@@ -417,8 +534,6 @@ thumbnail: &quot;images/hoge/thumbnail.jpg&quot;  すると static/images/hoge/t
             
                 
                     
-                        
-                        
                     
                 
                 
@@ -435,6 +550,7 @@ thumbnail: &quot;images/hoge/thumbnail.jpg&quot;  すると static/images/hoge/t
             
                 
                     
+                    
                 
                 
 
@@ -448,6 +564,7 @@ thumbnail: &quot;images/hoge/thumbnail.jpg&quot;  すると static/images/hoge/t
             
                 
                     
+                    
                 
                 
 
@@ -464,6 +581,9 @@ thumbnail: &quot;images/hoge/thumbnail.jpg&quot;  すると static/images/hoge/t
             
                 
                     
+                        
+                        
+                    
                 
                 
 
@@ -488,8 +608,10 @@ thumbnail: &quot;images/hoge/thumbnail.jpg&quot;  すると static/images/hoge/t
 
 
         
+            <a class="nav nav-prev" href="/wiki/technote/hugo/" title="Hugo"> <i class="fa fa-chevron-left"></i></a>
         
-            <a class="nav nav-next" href="/wiki/technote/" title="TechNote" style="margin-right: 0px;"><i class="fa fa-chevron-right"></i></a>
+        
+            <a class="nav nav-next" href="/wiki/technote/hugo/setting_for_robust/" title="Robust設定" style="margin-right: 0px;"><i class="fa fa-chevron-right"></i></a>
         
     </div>
 
@@ -516,3 +638,4 @@ thumbnail: &quot;images/hoge/thumbnail.jpg&quot;  すると static/images/hoge/t
 
   </body>
 </html>
+

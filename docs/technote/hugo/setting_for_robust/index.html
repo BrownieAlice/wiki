@@ -1,0 +1,647 @@
+<!DOCTYPE html>
+<html lang="en" class="js csstransforms3d">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+    <meta name="generator" content="Hugo 0.26" />
+    <meta name="description" content="">
+
+
+    <title>Robust設定 :: Alice in the Machine - wiki</title>
+    <link rel="shortcut icon" href="/wiki/images/favicon.png" type="image/x-icon" />
+    <link href="/wiki/css/nucleus.css" rel="stylesheet">
+    <link href="/wiki/css/font-awesome.min.css" rel="stylesheet">
+    <link href="/wiki/css/hybrid.css" rel="stylesheet">
+    <link href="/wiki/css/featherlight.min.css" rel="stylesheet">
+    <link href="/wiki/css/horsey.css" rel="stylesheet">
+    
+    <link href="/wiki/css/theme.css" rel="stylesheet">
+    
+    
+    <link rel="stylesheet" href="/wiki/css/bootstrap.min.css">
+    <script src="/wiki/js/jquery-2.x.min.js"></script>
+    <style type="text/css">
+      :root #header + #content > #left > #rlblock_left {
+        display:none !important;
+      }
+    </style>
+
+    
+
+    
+
+  </head>
+  <body class="" data-url="/wiki/technote/hugo/setting_for_robust/">
+    <nav id="sidebar" class="">
+
+
+
+
+
+<div class="highlightable">
+  <div id="header-wrapper">
+    <div id="header">
+       
+	<p><a href="https://browniealice.github.io/wiki/">Alice in the Machine - wiki</a></p>
+ 
+
+
+    </div>
+    
+        <div class="searchbox">
+    <label for="search-by"><i class="fa fa-search"></i></label>
+    <input data-search-input id="search-by" type="text" placeholder="Search...">
+    <span data-search-clear=""><i class="fa fa-close"></i></span>
+</div>
+<script type="text/javascript" src="/wiki/js/lunr.min.js"></script>
+<script type="text/javascript" src="/wiki/js/horsey.js"></script>
+<script type="text/javascript">
+    var baseurl = "https:\/\/browniealice.github.io\/wiki\/";
+</script>
+<script type="text/javascript" src="/wiki/js/search.js"></script>
+
+    
+  </div>
+
+  
+    <ul class="topics">
+        
+            <li data-nav-id="/wiki/" class="dd-item">
+            <a href="/wiki/"><i class="fa fa-fw fa-home"></i></a>
+            </li>
+        
+        
+        
+          
+          
+
+
+ 
+  
+    
+    <li data-nav-id="/wiki/technote/" class="dd-item 
+        parent
+        
+        
+        ">
+      <a href="/wiki/technote/">
+        <span>TechNote</span>
+
+        
+        
+
+          
+            <i class="fa fa-angle-down fa-lg category-icon"></i>
+          
+
+        
+
+        
+      </a>
+      
+        <ul>
+          
+          
+          
+          
+          
+          
+        
+          
+            
+            
+
+
+ 
+  
+    
+    <li data-nav-id="/wiki/technote/hugo/" class="dd-item 
+        parent
+        
+        
+        ">
+      <a href="/wiki/technote/hugo/">
+        <span>Hugo</span>
+
+        
+        
+
+          
+            <i class="fa fa-angle-down fa-lg category-icon"></i>
+          
+
+        
+
+        
+      </a>
+      
+        <ul>
+          
+          
+          
+          
+        
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/wiki/technote/hugo/how_to_use_hugo/" class="dd-item
+     
+      ">
+        <a href="/wiki/technote/hugo/how_to_use_hugo/">
+        <span>Hugo使い方</span> 
+        
+        </a></li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/wiki/technote/hugo/setting_for_robust/" class="dd-item
+     active
+      ">
+        <a href="/wiki/technote/hugo/setting_for_robust/">
+        <span>Robust設定</span> 
+        
+        </a></li>
+     
+  
+ 
+
+            
+          
+        
+        </ul>
+              
+    </li>
+  
+ 
+
+            
+          
+        
+        </ul>
+              
+    </li>
+  
+ 
+
+          
+        
+
+        
+        <section id="shortcuts">
+            
+                <li class="" role="">
+                    <h3>Links</h3>
+                    <a href=""></a>
+                    
+                </li>
+            
+                <li class="" role="">
+                    
+                    <a href="https://browniealice.github.io/blog/">Blog</a>
+                    
+                </li>
+            
+                <li class="" role="">
+                    
+                    <a href="https://browniealice.github.io/wiki/">wiki</a>
+                    
+                </li>
+            
+                <li class="" role="">
+                    
+                    <a href="https://github.com/BrownieAlice/">GitHub</a>
+                    
+                </li>
+            
+                <li class="" role="">
+                    
+                    <a href="https://github.com/BrownieAlice/wiki.git">Repo</a>
+                    
+                </li>
+            
+        </section>    
+        
+        
+
+        
+    </ul>
+    
+     
+    <section id="footer">
+      Copyright &copy; 2017-2017, BrownieAlice.<br>
+<a rel='license' href='http://creativecommons.org/licenses/by-sa/4.0/'><img alt='クリエイティブ・コモンズ・ライセンス' style='border-width:0' src='https://i.creativecommons.org/l/by-sa/4.0/80x15.png' /></a><br>
+このサイトのテキストは原則として <a rel='license' href='http://creativecommons.org/licenses/by-sa/4.0/'>クリエイティブ・コモンズ 表示 - 継承 4.0 国際 ライセンス</a> の下に提供されています.
+
+    </section>
+  </div>
+</nav>
+
+
+
+
+        <section id="body">
+        <div id="overlay"></div>
+        <div class="padding highlightable">
+        
+          <div id="top-bar">
+            
+
+            <div id="breadcrumbs" itemscope="" itemtype="http://data-vocabulary.org/Breadcrumb">
+                <span id="sidebar-toggle-span">
+                  <a href="#" id="sidebar-toggle" data-sidebar-toggle="">
+                    <i class="fa fa-bars"></i>
+                  </a>
+                </span>
+                <span id="toc-menu"><i class="fa fa-list-alt"></i></span>
+                <span class="links">
+                
+
+
+
+
+
+
+
+
+
+
+ <a href='/wiki/'>Alice in the Machine - wiki</a> > <a href='/wiki/technote/'>TechNote</a> > <a href='/wiki/technote/hugo/'>Hugo</a> > Robust設定
+
+ 
+
+ 
+
+ 
+
+   
+                </span>
+            </div>
+            <div class="progress">
+    <div class="wrapper">
+<nav id="TableOfContents">
+<ul>
+<li>
+<ul>
+<li><a href="#robustについて">Robustについて</a></li>
+<li><a href="#標準設定">標準設定</a>
+<ul>
+<li><a href="#タグ-カテゴリ-シリーズの利用">タグ/カテゴリ/シリーズの利用</a></li>
+<li><a href="#記事要約部分の日本語対応">記事要約部分の日本語対応</a></li>
+<li><a href="#サムネイル設定">サムネイル設定</a>
+<ul>
+<li><a href="#デフォルトサムネイル">デフォルトサムネイル</a></li>
+<li><a href="#カスタムサムネイル">カスタムサムネイル</a></li>
+</ul></li>
+<li><a href="#目次の割当">目次の割当</a></li>
+<li><a href="#画像の挿入">画像の挿入</a></li>
+<li><a href="#disqus導入">disqus導入</a></li>
+<li><a href="#copyright追加">copyright追加</a></li>
+</ul></li>
+<li><a href="#カスタマイズ">カスタマイズ</a>
+<ul>
+<li><a href="#about追加">About追加</a></li>
+<li><a href="#favicon追加">favicon追加</a></li>
+</ul></li>
+<li><a href="#参考サイト">参考サイト</a></li>
+</ul></li>
+</ul>
+</nav>
+    </div>
+</div>
+
+          </div>
+        
+        
+        <div id="body-inner">
+          
+            <h1>Robust設定</h1>
+          
+
+
+
+
+
+
+<h2 id="robustについて">Robustについて</h2>
+
+<p><a href="https://themes.gohugo.io/robust/">Robust</a>はHugoのテーマの1つ. <a href="https://themes.gohugo.io/theme/robust/">デモページ</a>のようなブログ風のページを作ることができる.<br />
+リポジトリは <a href="https://github.com/dim0627/hugo_theme_robust.git">https://github.com/dim0627/hugo_theme_robust.git</a> にある.</p>
+
+<h2 id="標準設定">標準設定</h2>
+
+<p>HugoやRobust自体の標準で設定する必要のある事.</p>
+
+<h3 id="タグ-カテゴリ-シリーズの利用">タグ/カテゴリ/シリーズの利用</h3>
+
+<p>タグ/カテゴリ/シリーズの分類機能を使うには <code>config.toml</code> を少し編集してやる必要がある. 以下を追記する.</p>
+
+<pre><code class="language-toml">[taxonomies]
+tag = &quot;tags&quot;
+category = &quot;categories&quot;
+series = &quot;series&quot;
+</code></pre>
+
+<p>また, 記事にカテゴリを割り当てる際はフロントマターを以下のように設定する.</p>
+
+<pre><code class="language-yaml">---
+title: &quot;hoge&quot;
+date: piyo
+categories :
+ - &quot;po&quot;
+ - &quot;popo&quot;
+---
+</code></pre>
+
+<h3 id="記事要約部分の日本語対応">記事要約部分の日本語対応</h3>
+
+<p>デフォルトだと要約されて表示される記事の文面がかなり長めに表示される. それを日本語用に適切な長さにするためには <code>config.toml</code> に以下を追記する.</p>
+
+<pre><code class="language-toml">hasCJKLanguage = true
+</code></pre>
+
+<h3 id="サムネイル設定">サムネイル設定</h3>
+
+<p>記事のサムネイルも設定できる.</p>
+
+<h4 id="デフォルトサムネイル">デフォルトサムネイル</h4>
+
+<p>お好みの画像をjpgファイルにして <code>static/images/default.jpg</code> におけば良い.</p>
+
+<h4 id="カスタムサムネイル">カスタムサムネイル</h4>
+
+<p>各記事に個別にサムネイルを設定することもできる. 記事のフロントマターに以下を追記すれば良い.</p>
+
+<pre><code class="language-yaml">thumbnail: &quot;images/hoge/thumbnail.jpg&quot;
+</code></pre>
+
+<p>すると <code>static/images/hoge/thumnail.jpg</code> がサムネイル画像になる. サムネイル画像自体はpngでもsvgでも入れてくれる. 要はブラウザ側がそのファイル形式に対応できているかによる.</p>
+
+<h3 id="目次の割当">目次の割当</h3>
+
+<p>記事の最初に目次をつけることもできる. デフォルトでは挿入されないが, フロントマターに以下を追記すると目次が表示されるようになる.</p>
+
+<pre><code class="language-yaml">toc: true
+</code></pre>
+
+<h3 id="画像の挿入">画像の挿入</h3>
+
+<p>画像はShortcodeを使って挿入できる. 以下を本文中に挿入すれば良い. ただしShortcodeの前後は空行にしておくこと.</p>
+
+<pre><code class="language-makdown">{{% img src=&quot;images/foo/bar.jpg&quot; w=&quot;600&quot; h=&quot;400&quot; caption=&quot;hoge&quot; href=&quot;https://example.com&quot; %}}
+</code></pre>
+
+<p>captionとhrefは省略可能.</p>
+
+<h3 id="disqus導入">disqus導入</h3>
+
+<p><a href="https://disqus.com/">disqus</a>に登録してshort nameを貰えれば, 後は <code>config.toml</code> を以下のように設定するだけ.</p>
+
+<pre><code class="language-toml">disqusShortname = &quot;hoge&quot;
+</code></pre>
+
+<h3 id="copyright追加">copyright追加</h3>
+
+<p>copyrightを追加する. クリエイティブ・コモンズの画像なり文章なりを無理やり入れることで出来た. <code>config.toml</code> を以下のように設定した.</p>
+
+<pre><code class="language-toml">copyright = &quot;Copyright &amp;copy; 2017-2017, BrownieAlice.&lt;br&gt;&lt;a rel='license' href='http://creativecommons.org/licenses/by-sa/4.0/'&gt;&lt;img alt='クリエイティブ・コモンズ・ライセンス' style='border-width:0' src='https://i.creativecommons.org/l/by-sa/4.0/80x15.png' /&gt;&lt;/a&gt;&lt;br&gt;このサイトのテキストは原則として &lt;a rel='license' href='http://creativecommons.org/licenses/by-sa/4.0/'&gt;クリエイティブ・コモンズ 表示 - 継承 4.0 国際 ライセンス&lt;/a&gt; の下に提供されています.&quot;
+</code></pre>
+
+<p>すごい無理やり….</p>
+
+<h2 id="カスタマイズ">カスタマイズ</h2>
+
+<p>一部はRobustのthemeを直接いじらないと設定できない.</p>
+
+<h3 id="about追加">About追加</h3>
+
+<p>右のサイドバーにAboutを追加したい. これをするには <code>layouts/partials</code> フォルダを作りそこに <code>sidebar.html</code> を追加し中身を以下のようにする.</p>
+
+<pre><code class="language-html">&lt;aside class=&quot;l-sidebar&quot;&gt;
+
+  &lt;div class=&quot;sections sidebar&quot;&gt;
+    &lt;section class=&quot;sidebar&quot;&gt;
+      &lt;header&gt;ABOUT&lt;/header&gt;
+      &lt;div&gt;
+	hogehogehoge. &lt;br&gt;
+	&lt;div align = &quot;center&quot;&gt;
+	  &lt;a href = &quot;https://example.com/&quot;&gt;foo&lt;/a&gt; / 
+	  &lt;a href = &quot;https://example.com/&quot;&gt;bar&lt;/a&gt; / 
+	  &lt;a href = &quot;https://example.com/&quot;&gt;poyo&lt;/a&gt; / 
+	  &lt;a href = &quot;https://example.com/&quot;&gt;piyo&lt;/a&gt;
+	 &lt;/div&gt;
+      &lt;/div&gt;
+    &lt;/section&gt;
+    &lt;section class=&quot;sidebar&quot;&gt;
+      &lt;header&gt;LATESTS&lt;/header&gt;
+      &lt;div&gt;
+        &lt;div class=&quot;articles sm&quot;&gt;
+          {{ range $i, $p := (first 10 .Site.Pages) }}
+          {{ .Render &quot;li_sm&quot; }}
+          {{ end }}
+        &lt;/div&gt;
+      &lt;/div&gt;
+    &lt;/section&gt;
+
+    {{ range $key, $value := .Site.Taxonomies }}
+    &lt;section class=&quot;sidebar&quot;&gt;
+      &lt;header&gt;{{ $key | upper }}&lt;/header&gt;
+      &lt;div&gt;
+        &lt;ul class=&quot;terms&quot;&gt;
+          {{ range first 10 $value.ByCount }}&lt;li&gt;&lt;a href=&quot;{{ $.Site.BaseURL}}{{ $key }}/{{ .Name | urlize }}&quot;&gt;{{ .Name }}&lt;/a&gt;&lt;/li&gt;{{ end }}
+        &lt;/ul&gt;
+      &lt;/div&gt;
+    &lt;/section&gt;
+    {{ end }}
+  &lt;/div&gt;
+
+&lt;/aside&gt;
+</code></pre>
+
+<p>実はほとんどrobustの <code>layouts/parials/sidebar.html</code> のコピー. それを少し改変しただけ. <code>themes/layouts</code> より <code>layouts</code> のほうが優先されるので<code>themes</code> フォルダを直接いじることなくカスタマイズすることができる.</p>
+
+<h3 id="favicon追加">favicon追加</h3>
+
+<p>iPhone向けのlogoは <code>static/images/logo.png</code> を配置すればすむ. ただ普通は林檎みたいな産業廃棄物は使わないのでちゃんと設定しないといけない.<br />
+<code>layouts/partials</code> フォルダに <code>meta.html</code> を作り中身を以下のようにする.</p>
+
+<pre><code class="language-html">&lt;meta charset=&quot;utf-8&quot;&gt;
+&lt;meta name=&quot;pinterest&quot; content=&quot;nopin&quot;&gt;
+&lt;meta name=&quot;viewport&quot; content=&quot;width=device-width,minimum-scale=1,initial-scale=1&quot;&gt;
+&lt;meta name=&quot;theme-color&quot; content=&quot;#263238&quot;&gt;
+{{ with .Site.Params.contact }}&lt;meta name=&quot;contact&quot; content=&quot;{{ . }}&quot;&gt;{{ end }}
+{{ .Hugo.Generator }}
+
+&lt;link rel=&quot;apple-touch-icon&quot; href=&quot;{{ .Site.BaseURL }}images/logo.png&quot;&gt;
+&lt;link rel=&quot;shortcut icon&quot; type=&quot;image/x-icon&quot; href=&quot;{{ .Site.BaseURL }}favicon.ico&quot;&gt;
+{{ with .RSSLink }}&lt;link rel=&quot;alternate&quot; type=&quot;application/rss+xml&quot; title=&quot;RSS&quot; href=&quot;{{ . }}&quot;&gt;{{ end }}
+
+&lt;link rel=&quot;canonical&quot; href=&quot;{{ .Permalink }}&quot;&gt;
+</code></pre>
+
+<p>そうしたあと <code>static</code> フォルダに <code>favicon.ico</code> を配置すればアイコンが表示されるようになる.</p>
+
+<h2 id="参考サイト">参考サイト</h2>
+
+<p><a href="https://github.com/dim0627/hugo_theme_robust">dim0627/hugo_theme_robust</a><br />
+<a href="http://blog.zzzmisa.com/customize_hugo_theme/">HUGO のテーマ Robust のカスタマイズ - zzzmisa&#39;s blog</a><br />
+<a href="https://gyoza.beer/post/2017-05-14-start-blog-with-hugo/">Github Pages/Hugoでブログを作成してみた - A1 Blog</a></p>
+
+
+<footer class=" footline" >
+	
+</footer>
+
+
+
+      </div>
+    </div>
+
+    
+ 
+    
+
+    <div id="navigation">
+        
+        
+        
+        
+            
+            
+                
+                    
+                    
+                
+                
+
+                    
+                    
+                        
+                    
+                    
+
+                    
+                        
+            
+            
+                
+                    
+                    
+                
+                
+
+                    
+                    
+                        
+                    
+                    
+
+                    
+                        
+            
+            
+                
+                    
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+                        
+            
+            
+                
+                    
+                        
+                        
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+            
+        
+                    
+            
+        
+                    
+            
+        
+        
+        
+
+
+        
+            <a class="nav nav-prev" href="/wiki/technote/hugo/how_to_use_hugo/" title="Hugo使い方"> <i class="fa fa-chevron-left"></i></a>
+        
+        
+            <a class="nav nav-next" href="/wiki/technote/hugo/how_to_use_hugo/" title="Hugo使い方" style="margin-right: 0px;"><i class="fa fa-chevron-right"></i></a>
+        
+    </div>
+
+    </section>
+    <div style="left: -1000px; overflow: scroll; position: absolute; top: -1000px; border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;">
+      <div style="border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;"></div>
+    </div>
+    <script src="/wiki/js/clipboard.min.js"></script>
+    <script src="/wiki/js/featherlight.min.js"></script>
+    <script src="/wiki/js/html5shiv-printshiv.min.js"></script>
+    <script src="/wiki/js/highlight.pack.js"></script>
+    <script>hljs.initHighlightingOnLoad();</script>
+    <script src="/wiki/js/modernizr.custom.71422.js"></script>
+    <script src="/wiki/js/learn.js"></script>
+    <script src="/wiki/js/hugo-learn.js"></script>
+
+    
+    <link href="/wiki/mermaid/mermaid.css" type="text/css" rel="stylesheet"/>
+    <script src="/wiki/mermaid/mermaid.js"></script>
+    <script>mermaid.initialize({startOnLoad:true});</script>
+    
+
+    
+
+  </body>
+</html>
+

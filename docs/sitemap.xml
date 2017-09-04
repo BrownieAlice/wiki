@@ -3,6 +3,16 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   
   <url>
+    <loc>https://browniealice.github.io/wiki/technote/hugo/how_to_use_hugo/</loc>
+    <lastmod>2017-08-15T22:15:02+09:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://browniealice.github.io/wiki/technote/hugo/setting_for_robust/</loc>
+    <lastmod>2017-09-04T22:36:49+09:00</lastmod>
+  </url>
+  
+  <url>
     <loc>https://browniealice.github.io/wiki/technote/hugo/</loc>
     <lastmod>2017-08-24T14:17:47+09:00</lastmod>
   </url>
@@ -18,11 +28,6 @@
   </url>
   
   <url>
-    <loc>https://browniealice.github.io/wiki/technote/hugo/hugo_how_use/</loc>
-    <lastmod>2017-08-15T22:15:02+09:00</lastmod>
-  </url>
-  
-  <url>
     <loc>https://browniealice.github.io/wiki/</loc>
     <lastmod>2017-08-15T21:04:33+09:00</lastmod>
   </url>
@@ -35,11 +40,6 @@
   <url>
     <loc>https://browniealice.github.io/wiki/categories/hugo/</loc>
     <lastmod>2017-08-15T22:15:02+09:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>https://browniealice.github.io/wiki/tags/</loc>
     <priority>0</priority>
   </url>
   

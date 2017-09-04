@@ -4,7 +4,6 @@ title = "Alice in the Machine - wiki"
 theme = "docdock"
 publishDir = "docs"
 footer = "true"
-copyright = "Copyleft (c) 2017, BrownieAlice; All rights resevesed."
 
 [outputs]
   home = [ "HTML", "RSS", "JSON"]
@@ -32,3 +31,6 @@ copyright = "Copyleft (c) 2017, BrownieAlice; All rights resevesed."
   url = "https://github.com/BrownieAlice/wiki.git"
   weight = 33
   identifier = "repo"
+
+[taxonomies]
+  category = "categories"

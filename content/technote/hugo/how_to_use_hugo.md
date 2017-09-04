@@ -3,6 +3,7 @@ title: "Hugo使い方"
 date: 2017-08-15T22:15:02+09:00
 categories:
  - "Hugo"
+weight: 1
 ---
 
 ## Hugoについて
@@ -77,7 +78,7 @@ Github Pagesを用いてWebサイトを公開するなら少し設定を変更�
 
 #### GiuHub側
 リポジトリのページを開いて `Settings -> GutHub Pages -> Source -> master branch /docs folder` と設定して保存する.  
-するとmasterブランチの `/docs` 以下がWebページだとみなしてWebサイトにしてくれる.
+するとmasterブランチの `docs` フォルダ 以下がWebページだとみなしてWebサイトにしてくれる.
 
 #### Hugo側
 `config.toml` を少しいじる.
@@ -86,7 +87,7 @@ Github Pagesを用いてWebサイトを公開するなら少し設定を変更�
 publishDir = "docs"
 ```
 
-こうすると `/docs` 以下にHTMLなどが生成されるようになる.
+こうすると `docs` フォルダ以下にHTMLなどが生成されるようになる.
 
 ## 環境構築
 ### Blog
