@@ -67,7 +67,7 @@ toc: true
 ### 画像の挿入
 画像はShortcodeを使って挿入できる. 以下を本文中に挿入すれば良い. ただしShortcodeの前後は空行にしておくこと.
 
-```makdown
+```markdown
 {{% img src="images/foo/bar.jpg" w="600" h="400" caption="hoge" href="https://example.com" %}}
 ```
 

@@ -2,21 +2,21 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Alice in the Machine - wiki</title>
-    <link>https://browniealice.github.io/wiki/</link>
+    <link>https://wiki.browniealice.net/</link>
     <description>Recent content on Alice in the Machine - wiki</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>ja-JP</language>
     <lastBuildDate>Tue, 15 Aug 2017 21:04:33 +0900</lastBuildDate>
     
-	<atom:link href="https://browniealice.github.io/wiki/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="https://wiki.browniealice.net/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
       <title>Hugo使い方</title>
-      <link>https://browniealice.github.io/wiki/technote/hugo/how_to_use_hugo/</link>
+      <link>https://wiki.browniealice.net/technote/hugo/how_to_use_hugo/</link>
       <pubDate>Tue, 15 Aug 2017 22:15:02 +0900</pubDate>
       
-      <guid>https://browniealice.github.io/wiki/technote/hugo/how_to_use_hugo/</guid>
+      <guid>https://wiki.browniealice.net/technote/hugo/how_to_use_hugo/</guid>
       <description>Hugoについて 静的Webページ変換ツールの1つ. 他にもJekyllやHexoなどが有名.
 基本的にはMarkdownで記事を書き, Hugoを起動して変換してもらって所定の静的なWebページを作る. スタイルなどを調整してやればBlogみたいなWebページもできる.
 Blogとwikiについて ブログはHugoを用いてGitHub Pages上で公開している. BlogはAlice in the Machine - Blogにある.
@@ -30,10 +30,10 @@ git init . git remote add origin https://github.com/&amp;lt;user-name&amp;gt;/ho
     
     <item>
       <title>Robust設定</title>
-      <link>https://browniealice.github.io/wiki/technote/hugo/setting_for_robust/</link>
+      <link>https://wiki.browniealice.net/technote/hugo/setting_for_robust/</link>
       <pubDate>Mon, 04 Sep 2017 22:36:49 +0900</pubDate>
       
-      <guid>https://browniealice.github.io/wiki/technote/hugo/setting_for_robust/</guid>
+      <guid>https://wiki.browniealice.net/technote/hugo/setting_for_robust/</guid>
       <description>Robustについて RobustはHugoのテーマの1つ. デモページのようなブログ風のページを作ることができる.
 リポジトリは https://github.com/dim0627/hugo_theme_robust.git にある.
 標準設定 HugoやRobust自体の標準で設定する必要のある事.
@@ -49,10 +49,10 @@ thumbnail: &amp;quot;images/hoge/thumbnail.jpg&amp;quot;  すると static/image
     
     <item>
       <title>_Header</title>
-      <link>https://browniealice.github.io/wiki/_header/</link>
+      <link>https://wiki.browniealice.net/_header/</link>
       <pubDate>Thu, 24 Aug 2017 13:53:07 +0900</pubDate>
       
-      <guid>https://browniealice.github.io/wiki/_header/</guid>
+      <guid>https://wiki.browniealice.net/_header/</guid>
       <description>Alice in the Machine - wiki</description>
     </item>
     

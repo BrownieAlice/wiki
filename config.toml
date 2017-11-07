@@ -1,4 +1,4 @@
-baseURL = "https://browniealice.github.io/wiki/"
+baseURL = "https://wiki.browniealice.net/"
 languageCode = "ja-JP"
 title = "Alice in the Machine - wiki"
 theme = "docdock"
@@ -13,12 +13,12 @@ footer = "true"
   identifier = "links"
 [[menu.shortcuts]]
   name = "Blog"
-  url = "https://browniealice.github.io/blog/"
+  url = "https://blog.browniealice.net"
   weight = 30
   identifier = "blog"
 [[menu.shortcuts]]
   name = "wiki"
-  url = "https://browniealice.github.io/wiki/"
+  url = "https://wiki.browniealice.net"
   weight = 31
   identifier = "wiki"
 [[menu.shortcuts]]
