@@ -1,5 +1,6 @@
 baseURL = "https://wiki.browniealice.net/"
 languageCode = "ja-JP"
+DefaultContentLanguage = "ja-jp"
 title = "Alice in the Machine - wiki"
 theme = "docdock"
 publishDir = "docs"

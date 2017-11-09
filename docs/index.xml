@@ -49,6 +49,21 @@ toc: true  画像の挿入 画像はShortcodeを使って挿入できる.</descr
     </item>
     
     <item>
+      <title>DocDock設定</title>
+      <link>https://wiki.browniealice.net/technote/hugo/setting_for_docdock/</link>
+      <pubDate>Thu, 09 Nov 2017 10:30:47 +0900</pubDate>
+      
+      <guid>https://wiki.browniealice.net/technote/hugo/setting_for_docdock/</guid>
+      <description> DocDockについて DocDockはHugoのテーマの1つ. デモページのようなドキュメント用のページを作ることができる.
+リポジトリはhttps://github.com/vjeantet/hugo-theme-docdock.gitにある.
+標準設定 HugoやDocDock自体の標準で設定する必要のある事.
+タグ/カテゴリ/シリーズの利用 上手く行かないので諦めよう. タグは左上にリンクが作成されるがリンク先の実体が生成されない. カテゴリはリンク先の実体は生成されるが自動でそのページにリンクは貼られない. シリーズは試してないけどwikiにはあわなそう.
+メニューバーの追加 メニュー場にリンクを使いするには例えば以下を config.toml に記載する.
+[[menu.shortcuts]] pre = &amp;quot;&amp;lt;h3&amp;gt;Links&amp;lt;/h3&amp;gt;&amp;quot; identifier = &amp;quot;links&amp;quot; [[menu.shortcuts]] name = &amp;quot;Blog&amp;quot; url = &amp;quot;https://blog.browniealice.net&amp;quot; weight = 30 identifier = &amp;quot;blog&amp;quot;  カスタマイズ 一部はDocDockのthemeを直接いじらないと設定できない. 左のバーにコピーライトを追加したい. これをするには layouts/partials フォルダを作り menu-footer.html を追加し中身を以下のようにする.
+Copyright &amp;amp;copy; 2017-2017, BrownieAlice.&amp;lt;br&amp;gt; &amp;lt;a rel=&#39;license&#39; href=&#39;http://creativecommons.org/licenses/by-sa/4.0/&#39;&amp;gt;&amp;lt;img alt=&#39;クリエイティブ・コモンズ・ライセンス&#39; style=&#39;border-width:0&#39; src=&#39;https://i.creativecommons.org/l/by-sa/4.0/80x15.png&#39; /&amp;gt;&amp;lt;/a&amp;gt;&amp;lt;br&amp;gt; このサイトのテキストは原則として &amp;lt;a rel=&#39;license&#39; href=&#39;http://creativecommons.org/licenses/by-sa/4.0/&#39;&amp;gt;クリエイティブ・コモンズ 表示 - 継承 4.0 国際 ライセンス&amp;lt;/a&amp;gt; の下に提供されています.  </description>
+    </item>
+    
+    <item>
       <title>_Header</title>
       <link>https://wiki.browniealice.net/_header/</link>
       <pubDate>Thu, 24 Aug 2017 13:53:07 +0900</pubDate>

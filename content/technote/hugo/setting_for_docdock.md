@@ -1,7 +1,6 @@
 ---
 title: "DocDock設定"
 date: 2017-11-09T10:30:47+09:00
-draft: true
 tags:
  - "Hugo"
 weight: 3

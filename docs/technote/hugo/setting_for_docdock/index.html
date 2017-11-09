@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
 <meta name="generator" content="Hugo 0.30.2" />
 
-<title>_Header :: Alice in the Machine - wiki</title>
+<title>DocDock設定 :: Alice in the Machine - wiki</title>
 <link rel="shortcut icon" href="/images/favicon.png" type="image/x-icon" />
 <link href="/css/nucleus.css" rel="stylesheet">
 <link href="/css/font-awesome.min.css" rel="stylesheet">
@@ -28,7 +28,7 @@
 
     
   </head>
-  <body data-url="/_header/">
+  <body data-url="/technote/hugo/setting_for_docdock/">
     
       <div id="headermain"></div>
 <nav id="sidebar" class="">
@@ -65,14 +65,16 @@
             <li data-nav-id="/" class="dd-item">
             <a href="/"><i class="fa fa-fw fa-home"></i></a>
             </li>
-    <li data-nav-id="/technote/" class="dd-item">
+    <li data-nav-id="/technote/" class="dd-item parent">
       <a href="/technote/">
-        <span>TechNote</span><i class="fa fa-angle-right fa-lg category-icon"></i>
+        <span>TechNote</span>
+            <i class="fa fa-angle-down fa-lg category-icon"></i>
       </a>
         <ul>
-    <li data-nav-id="/technote/hugo/" class="dd-item">
+    <li data-nav-id="/technote/hugo/" class="dd-item parent">
       <a href="/technote/hugo/">
-        <span>Hugo</span><i class="fa fa-angle-right fa-lg category-icon"></i>
+        <span>Hugo</span>
+            <i class="fa fa-angle-down fa-lg category-icon"></i>
       </a>
         <ul>
       <li data-nav-id="/technote/hugo/how_to_use_hugo/" class="dd-item">
@@ -85,7 +87,7 @@
           <span>Robust設定</span>
         </a>
     </li>
-      <li data-nav-id="/technote/hugo/setting_for_docdock/" class="dd-item">
+      <li data-nav-id="/technote/hugo/setting_for_docdock/" class="dd-item active">
         <a href="/technote/hugo/setting_for_docdock/">
           <span>DocDock設定</span>
         </a>
@@ -135,7 +137,22 @@
         <span class="links">
         
 
- _Header
+
+
+
+
+
+
+
+
+
+ <a href='/'>Alice in the Machine - wiki</a> > <a href='/technote/'>TechNote</a> > <a href='/technote/hugo/'>Hugo</a> > DocDock設定
+
+ 
+
+ 
+
+ 
 
    
         </span>
@@ -144,7 +161,20 @@
     
     <div class="progress">
         <div class="wrapper">
-    
+    <nav id="TableOfContents">
+<ul>
+<li>
+<ul>
+<li><a href="#docdockについて">DocDockについて</a></li>
+<li><a href="#標準設定">標準設定</a>
+<ul>
+<li><a href="#タグ-カテゴリ-シリーズの利用">タグ/カテゴリ/シリーズの利用</a></li>
+<li><a href="#メニューバーの追加">メニューバーの追加</a></li>
+</ul></li>
+<li><a href="#カスタマイズ">カスタマイズ</a></li>
+</ul></li>
+</ul>
+</nav>
         </div>
     </div>
     
@@ -152,9 +182,15 @@
   </div>
 
 
+  <div id="tags">
+    
+      <a class="label label-default" href="https://wiki.browniealice.net/tags/hugo">Hugo</a>
+    
+  </div>
+
 <div id="body-inner">
   
-    <h1>_Header</h1>
+    <h1>DocDock設定</h1>
   
 
 
@@ -162,7 +198,44 @@
     
     
     
-    <p><a href="https://wiki.browniealice.net/">Alice in the Machine - wiki</a></p>
+    
+
+<h2 id="docdockについて">DocDockについて</h2>
+
+<p><a href="https://themes.gohugo.io/docdock/">DocDock</a>はHugoのテーマの1つ. <a href="https://themes.gohugo.io/theme/docdock/">デモページ</a>のようなドキュメント用のページを作ることができる.<br />
+リポジトリは<a href="https://github.com/vjeantet/hugo-theme-docdock.git">https://github.com/vjeantet/hugo-theme-docdock.git</a>にある.</p>
+
+<h2 id="標準設定">標準設定</h2>
+
+<p>HugoやDocDock自体の標準で設定する必要のある事.</p>
+
+<h3 id="タグ-カテゴリ-シリーズの利用">タグ/カテゴリ/シリーズの利用</h3>
+
+<p>上手く行かないので諦めよう. タグは左上にリンクが作成されるがリンク先の実体が生成されない. カテゴリはリンク先の実体は生成されるが自動でそのページにリンクは貼られない. シリーズは試してないけどwikiにはあわなそう.</p>
+
+<h3 id="メニューバーの追加">メニューバーの追加</h3>
+
+<p>メニュー場にリンクを使いするには例えば以下を <code>config.toml</code> に記載する.</p>
+
+<pre><code class="language-markdown">[[menu.shortcuts]]
+  pre = &quot;&lt;h3&gt;Links&lt;/h3&gt;&quot;
+  identifier = &quot;links&quot;
+[[menu.shortcuts]]
+  name = &quot;Blog&quot;
+  url = &quot;https://blog.browniealice.net&quot;
+  weight = 30
+  identifier = &quot;blog&quot;
+</code></pre>
+
+<h2 id="カスタマイズ">カスタマイズ</h2>
+
+<p>一部はDocDockのthemeを直接いじらないと設定できない.
+左のバーにコピーライトを追加したい. これをするには <code>layouts/partials</code> フォルダを作り <code>menu-footer.html</code> を追加し中身を以下のようにする.</p>
+
+<pre><code class="language-markdown">Copyright &amp;copy; 2017-2017, BrownieAlice.&lt;br&gt;
+&lt;a rel='license' href='http://creativecommons.org/licenses/by-sa/4.0/'&gt;&lt;img alt='クリエイティブ・コモンズ・ライセンス' style='border-width:0' src='https://i.creativecommons.org/l/by-sa/4.0/80x15.png' /&gt;&lt;/a&gt;&lt;br&gt;
+このサイトのテキストは原則として &lt;a rel='license' href='http://creativecommons.org/licenses/by-sa/4.0/'&gt;クリエイティブ・コモンズ 表示 - 継承 4.0 国際 ライセンス&lt;/a&gt; の下に提供されています.
+</code></pre>
 
 
     
@@ -174,7 +247,8 @@
 </div>
 
 <div id="navigation">
-<a class="nav nav-next" href="/technote/" title="TechNote" style="margin-right: 0px;"><i class="fa fa-chevron-right"></i></a></div>
+<a class="nav nav-prev" href="/technote/hugo/setting_for_robust/" title="Robust設定"> <i class="fa fa-chevron-left"></i></a>
+    <a class="nav nav-next" href="/technote/hugo/how_to_use_hugo/" title="Hugo使い方" style="margin-right: 0px;"><i class="fa fa-chevron-right"></i></a></div>
 
 </section>
 <div style="left: -1000px; overflow: scroll; position: absolute; top: -1000px; border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;">
