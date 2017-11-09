@@ -16,7 +16,7 @@
 {
 	"uri": "https://wiki.browniealice.net/technote/hugo/",
 	"title": "Hugo",
-	"tags": [],
+	"tags": ["Hugo"],
 	"description": "",
 	"content": " Hugoについて Hugo は静的サイトジェネレータの1つ. Markdownで記事を書いて所定のプログラムを動かせば静的なサイトが生成される.\n直接HTMLを叩かなくて済むので楽. またGitHub Pagesを用いれば簡単にWebサイトを公開できるので便利.\nBlog と wiki もHugoを用いて作成している\n"
 },
