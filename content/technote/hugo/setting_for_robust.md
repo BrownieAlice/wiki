@@ -1,14 +1,14 @@
 ---
 title: "Robust設定"
 date: 2017-09-04T22:36:49+09:00
-categories:
+tags:
  - "Hugo"
 weight: 2
 ---
 
 ## Robustについて
 [Robust](https://themes.gohugo.io/robust/)はHugoのテーマの1つ. [デモページ](https://themes.gohugo.io/theme/robust/)のようなブログ風のページを作ることができる.  
-リポジトリは [https://github.com/dim0627/hugo_theme_robust.git](https://github.com/dim0627/hugo_theme_robust.git) にある.
+リポジトリは [https://github.com/dim0627/hugo_theme_robust.git](https://github.com/dim0627/hugo_theme_robust.git)にある.
 
 ## 標準設定
 HugoやRobust自体の標準で設定する必要のある事.

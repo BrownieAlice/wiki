@@ -1,7 +1,7 @@
 ---
 title: "Hugo使い方"
 date: 2017-08-15T22:15:02+09:00
-categories:
+tags:
  - "Hugo"
 weight: 1
 ---

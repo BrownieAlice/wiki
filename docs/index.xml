@@ -35,7 +35,7 @@ git init . git remote add origin https://github.com/&amp;lt;user-name&amp;gt;/ho
       
       <guid>https://wiki.browniealice.net/technote/hugo/setting_for_robust/</guid>
       <description>Robustについて RobustはHugoのテーマの1つ. デモページのようなブログ風のページを作ることができる.
-リポジトリは https://github.com/dim0627/hugo_theme_robust.git にある.
+リポジトリは https://github.com/dim0627/hugo_theme_robust.gitにある.
 標準設定 HugoやRobust自体の標準で設定する必要のある事.
 タグ/カテゴリ/シリーズの利用 タグ/カテゴリ/シリーズの分類機能を使うには config.toml を少し編集してやる必要がある. 以下を追記する.
 [taxonomies] tag = &amp;quot;tags&amp;quot; category = &amp;quot;categories&amp;quot; series = &amp;quot;series&amp;quot;  また, 記事にカテゴリを割り当てる際はフロントマターを以下のように設定する.
@@ -44,7 +44,8 @@ hasCJKLanguage = true  サムネイル設定 記事のサムネイルも設定�
 デフォルトサムネイル お好みの画像をjpgファイルにして static/images/default.jpg におけば良い.
 カスタムサムネイル 各記事に個別にサムネイルを設定することもできる. 記事のフロントマターに以下を追記すれば良い.
 thumbnail: &amp;quot;images/hoge/thumbnail.jpg&amp;quot;  すると static/images/hoge/thumnail.jpg がサムネイル画像になる. サムネイル画像自体はpngでもsvgでも入れてくれる. 要はブラウザ側がそのファイル形式に対応できているかによる.
-目次の割当 記事の最初に目次をつけることもできる. デフォルトでは挿入されないが, フロントマターに以下を追記すると目次が表示されるようになる.</description>
+目次の割当 記事の最初に目次をつけることもできる. デフォルトでは挿入されないが, フロントマターに以下を追記すると目次が表示されるようになる.
+toc: true  画像の挿入 画像はShortcodeを使って挿入できる.</description>
     </item>
     
     <item>
