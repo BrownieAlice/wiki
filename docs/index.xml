@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Alice in the Machine - wiki</title>
@@ -17,15 +17,7 @@
       <pubDate>Tue, 15 Aug 2017 22:15:02 +0900</pubDate>
       
       <guid>https://wiki.browniealice.net/technote/hugo/how_to_use_hugo/</guid>
-      <description>Hugoについて 静的Webページ変換ツールの1つ. 他にもJekyllやHexoなどが有名.
-基本的にはMarkdownで記事を書き, Hugoを起動して変換してもらって所定の静的なWebページを作る. スタイルなどを調整してやればBlogみたいなWebページもできる.
-Blogとwikiについて ブログはHugoを用いてGitHub Pages上で公開している. BlogはAlice in the Machine - Blogにある.
-wikiも同様にしてGitHub Pages上で公開している. wikiはAlice in the Machine - wikiにある.
-Hugoインストール Install Hugoを参考にすれば良い. Ubuntuのバイナリインストールでいいなら
-snap install hugo  で完了.
-Hugo初期設定 既にレポジトリがある場合やる必要はないが, 新たにWebページを作成するなら必要.
-Hugo new site hoge  で hoge ディレクトリに新たなHugoのワークスペースができる. あとは hoge ディレクトリに移動して以下をやっておく.
-git init . git remote add origin https://github.com/&amp;lt;user-name&amp;gt;/hoge.git git add * git commit -m &amp;quot;Init Hugo.&amp;quot; git push -u origin master  こうすれば後は普通に記事制作するだけで済む.</description>
+      <description>Hugoについて 静的Webページ変換ツールの1つ. 他にもJekyllやHexoなどが有名. 基本的にはMarkdownで記事を書き, Hugoを</description>
     </item>
     
     <item>
@@ -34,18 +26,7 @@ git init . git remote add origin https://github.com/&amp;lt;user-name&amp;gt;/ho
       <pubDate>Mon, 04 Sep 2017 22:36:49 +0900</pubDate>
       
       <guid>https://wiki.browniealice.net/technote/hugo/setting_for_robust/</guid>
-      <description>Robustについて RobustはHugoのテーマの1つ. デモページのようなブログ風のページを作ることができる.
-リポジトリは https://github.com/dim0627/hugo_theme_robust.gitにある.
-標準設定 HugoやRobust自体の標準で設定する必要のある事.
-タグ/カテゴリ/シリーズの利用 タグ/カテゴリ/シリーズの分類機能を使うには config.toml を少し編集してやる必要がある. 以下を追記する.
-[taxonomies] tag = &amp;quot;tags&amp;quot; category = &amp;quot;categories&amp;quot; series = &amp;quot;series&amp;quot;  また, 記事にカテゴリを割り当てる際はフロントマターを以下のように設定する.
---- title: &amp;quot;hoge&amp;quot; date: piyo categories : - &amp;quot;po&amp;quot; - &amp;quot;popo&amp;quot; ---  記事要約部分の日本語対応 デフォルトだと要約されて表示される記事の文面がかなり長めに表示される. それを日本語用に適切な長さにするためには config.toml に以下を追記する.
-hasCJKLanguage = true  サムネイル設定 記事のサムネイルも設定できる.
-デフォルトサムネイル お好みの画像をjpgファイルにして static/images/default.jpg におけば良い.
-カスタムサムネイル 各記事に個別にサムネイルを設定することもできる. 記事のフロントマターに以下を追記すれば良い.
-thumbnail: &amp;quot;images/hoge/thumbnail.jpg&amp;quot;  すると static/images/hoge/thumnail.jpg がサムネイル画像になる. サムネイル画像自体はpngでもsvgでも入れてくれる. 要はブラウザ側がそのファイル形式に対応できているかによる.
-目次の割当 記事の最初に目次をつけることもできる. デフォルトでは挿入されないが, フロントマターに以下を追記すると目次が表示されるようになる.
-toc: true  画像の挿入 画像はShortcodeを使って挿入できる.</description>
+      <description>Robustについて RobustはHugoのテーマの1つ. リポジトリは https://github.com/dim0627/hugo_the</description>
     </item>
     
     <item>
@@ -54,13 +35,7 @@ toc: true  画像の挿入 画像はShortcodeを使って挿入できる.</descr
       <pubDate>Thu, 09 Nov 2017 10:30:47 +0900</pubDate>
       
       <guid>https://wiki.browniealice.net/technote/hugo/setting_for_docdock/</guid>
-      <description> DocDockについて DocDockはHugoのテーマの1つ. デモページのようなドキュメント用のページを作ることができる.
-リポジトリはhttps://github.com/vjeantet/hugo-theme-docdock.gitにある.
-標準設定 HugoやDocDock自体の標準で設定する必要のある事.
-タグ/カテゴリ/シリーズの利用 上手く行かないので諦めよう. タグは左上にリンクが作成されるがリンク先の実体が生成されない. カテゴリはリンク先の実体は生成されるが自動でそのページにリンクは貼られない. シリーズは試してないけどwikiにはあわなそう.
-メニューバーの追加 メニュー場にリンクを使いするには例えば以下を config.toml に記載する.
-[[menu.shortcuts]] pre = &amp;quot;&amp;lt;h3&amp;gt;Links&amp;lt;/h3&amp;gt;&amp;quot; identifier = &amp;quot;links&amp;quot; [[menu.shortcuts]] name = &amp;quot;Blog&amp;quot; url = &amp;quot;https://blog.browniealice.net&amp;quot; weight = 30 identifier = &amp;quot;blog&amp;quot;  カスタマイズ 一部はDocDockのthemeを直接いじらないと設定できない. 左のバーにコピーライトを追加したい. これをするには layouts/partials フォルダを作り menu-footer.html を追加し中身を以下のようにする.
-Copyright &amp;amp;copy; 2017-2017, BrownieAlice.&amp;lt;br&amp;gt; &amp;lt;a rel=&#39;license&#39; href=&#39;http://creativecommons.org/licenses/by-sa/4.0/&#39;&amp;gt;&amp;lt;img alt=&#39;クリエイティブ・コモンズ・ライセンス&#39; style=&#39;border-width:0&#39; src=&#39;https://i.creativecommons.org/l/by-sa/4.0/80x15.png&#39; /&amp;gt;&amp;lt;/a&amp;gt;&amp;lt;br&amp;gt; このサイトのテキストは原則として &amp;lt;a rel=&#39;license&#39; href=&#39;http://creativecommons.org/licenses/by-sa/4.0/&#39;&amp;gt;クリエイティブ・コモンズ 表示 - 継承 4.0 国際 ライセンス&amp;lt;/a&amp;gt; の下に提供されています.  </description>
+      <description>DocDockについて DocDockはHugoのテーマの1つ. デモページのようなドキュメント用のページを作ることができる. リポジトリはhtt</description>
     </item>
     
     <item>

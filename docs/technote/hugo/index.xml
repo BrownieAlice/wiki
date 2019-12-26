@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Hugo on Alice in the Machine - wiki</title>
+    <link>https://wiki.browniealice.net/technote/hugo/</link>
+    <description>Recent content in Hugo on Alice in the Machine - wiki</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>ja-JP</language>
+    <lastBuildDate>Thu, 24 Aug 2017 14:17:47 +0900</lastBuildDate>
+    
+	<atom:link href="https://wiki.browniealice.net/technote/hugo/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Hugo使い方</title>
+      <link>https://wiki.browniealice.net/technote/hugo/how_to_use_hugo/</link>
+      <pubDate>Tue, 15 Aug 2017 22:15:02 +0900</pubDate>
+      
+      <guid>https://wiki.browniealice.net/technote/hugo/how_to_use_hugo/</guid>
+      <description>Hugoについて 静的Webページ変換ツールの1つ. 他にもJekyllやHexoなどが有名. 基本的にはMarkdownで記事を書き, Hugoを</description>
+    </item>
+    
+    <item>
+      <title>Robust設定</title>
+      <link>https://wiki.browniealice.net/technote/hugo/setting_for_robust/</link>
+      <pubDate>Mon, 04 Sep 2017 22:36:49 +0900</pubDate>
+      
+      <guid>https://wiki.browniealice.net/technote/hugo/setting_for_robust/</guid>
+      <description>Robustについて RobustはHugoのテーマの1つ. リポジトリは https://github.com/dim0627/hugo_the</description>
+    </item>
+    
+    <item>
+      <title>DocDock設定</title>
+      <link>https://wiki.browniealice.net/technote/hugo/setting_for_docdock/</link>
+      <pubDate>Thu, 09 Nov 2017 10:30:47 +0900</pubDate>
+      
+      <guid>https://wiki.browniealice.net/technote/hugo/setting_for_docdock/</guid>
+      <description>DocDockについて DocDockはHugoのテーマの1つ. デモページのようなドキュメント用のページを作ることができる. リポジトリはhtt</description>
+    </item>
+    
+  </channel>
+</rss>

@@ -7,14 +7,14 @@ weight: 2
 ---
 
 ## Robustについて
-[Robust](https://themes.gohugo.io/robust/)はHugoのテーマの1つ. [デモページ](https://themes.gohugo.io/theme/robust/)のようなブログ風のページを作ることができる.  
+[Robust](https://themes.gohugo.io/robust/)はHugoのテーマの1つ.
 リポジトリは [https://github.com/dim0627/hugo_theme_robust.git](https://github.com/dim0627/hugo_theme_robust.git)にある.
 
-## 標準設定
-HugoやRobust自体の標準で設定する必要のある事.
+## 設定項目
+Robustの機能として設定できる項目.
 
 ### タグ/カテゴリ/シリーズの利用
-タグ/カテゴリ/シリーズの分類機能を使うには `config.toml` を少し編集してやる必要がある. 以下を追記する.
+タグ/カテゴリ/シリーズの分類機能を使うには `config.toml` を少し編集する必要がある. 以下を追記する.
 
 ```toml
 [taxonomies]
@@ -36,7 +36,7 @@ categories :
 ```
 
 ### 記事要約部分の日本語対応
-デフォルトだと要約されて表示される記事の文面がかなり長めに表示される. それを日本語用に適切な長さにするためには `config.toml` に以下を追記する.
+デフォルトだと記事の要約として表示される分量が異常に多い. 日本語として適切な長さにするためには `config.toml` に以下を追記する.
 
 ```toml
 hasCJKLanguage = true
@@ -64,80 +64,50 @@ thumbnail: "images/hoge/thumbnail.jpg"
 toc: true
 ```
 
+### Author設定
+右のサイドバーの著者情報は `config.toml` を編集することで設定できる.
+例えば以下のように設定する.
+
+```toml
+[params.author]
+thumbnail = "images/author.png"
+name = "BrownieAlice"
+description = """
+<div align="center">
+工業大学に通う大学院生. <br>
+ロボコンに参加したことがあったり? <br>
+<a href="https://blog.browniealice.net">Blog</a> /
+<a href="https://wiki.browniealice.net">wiki</a> /
+<a href="https://github.com/BrownieAlice/blog.git">Repository</a>
+</div>"""
+github = "https://github.com/BrownieAlice"
+```
+
 ### 画像の挿入
 画像はShortcodeを使って挿入できる. 以下を本文中に挿入すれば良い. ただしShortcodeの前後は空行にしておくこと.
 
 ```markdown
-{{% img src="images/foo/bar.jpg" w="600" h="400" caption="hoge" href="https://example.com" %}}
+{{%/* img src="images/foo/bar.jpg" w="600" h="400" caption="hoge" href="https://example.com" */%}}
 ```
 
 captionとhrefは省略可能.
 
 ### disqus導入
-[disqus](https://disqus.com/)に登録してshort nameを貰えれば, 後は `config.toml` を以下のように設定するだけ.
+[disqus](https://disqus.com/)に登録してshort nameを貰えれば, 後は `config.toml` を以下のように設定するだけで利用できる.
 
 ```toml
 disqusShortname = "hoge"
 ```
 
 ### copyright追加
-copyrightを追加する. クリエイティブ・コモンズの画像なり文章なりを無理やり入れることで出来た. `config.toml` を以下のように設定した.
+copyrightを追加する. `config.toml` を以下のように設定した.
 
 ```toml
 copyright = "Copyright &copy; 2017-2017, BrownieAlice.<br><a rel='license' href='http://creativecommons.org/licenses/by-sa/4.0/'><img alt='クリエイティブ・コモンズ・ライセンス' style='border-width:0' src='https://i.creativecommons.org/l/by-sa/4.0/80x15.png' /></a><br>このサイトのテキストは原則として <a rel='license' href='http://creativecommons.org/licenses/by-sa/4.0/'>クリエイティブ・コモンズ 表示 - 継承 4.0 国際 ライセンス</a> の下に提供されています."
 ```
 
-すごい無理やり….
-
 ## カスタマイズ
 一部はRobustのthemeを直接いじらないと設定できない.
-
-### About追加
-右のサイドバーにAboutを追加したい. これをするには `layouts/partials` フォルダを作りそこに `sidebar.html` を追加し中身を以下のようにする.
-
-```html
-<aside class="l-sidebar">
-
-  <div class="sections sidebar">
-    <section class="sidebar">
-      <header>ABOUT</header>
-      <div>
-	hogehogehoge. <br>
-	<div align = "center">
-	  <a href = "https://example.com/">foo</a> / 
-	  <a href = "https://example.com/">bar</a> / 
-	  <a href = "https://example.com/">poyo</a> / 
-	  <a href = "https://example.com/">piyo</a>
-	 </div>
-      </div>
-    </section>
-    <section class="sidebar">
-      <header>LATESTS</header>
-      <div>
-        <div class="articles sm">
-          {{ range $i, $p := (first 10 .Site.Pages) }}
-          {{ .Render "li_sm" }}
-          {{ end }}
-        </div>
-      </div>
-    </section>
-
-    {{ range $key, $value := .Site.Taxonomies }}
-    <section class="sidebar">
-      <header>{{ $key | upper }}</header>
-      <div>
-        <ul class="terms">
-          {{ range first 10 $value.ByCount }}<li><a href="{{ $.Site.BaseURL}}{{ $key }}/{{ .Name | urlize }}">{{ .Name }}</a></li>{{ end }}
-        </ul>
-      </div>
-    </section>
-    {{ end }}
-  </div>
-
-</aside>
-```
-
-実はほとんどrobustの `layouts/parials/sidebar.html` のコピー. それを少し改変しただけ. `themes/layouts` より `layouts` のほうが優先されるので`themes` フォルダを直接いじることなくカスタマイズすることができる.
 
 ### favicon追加
 iPhone向けのlogoは `static/images/logo.png` を配置すればすむ. ただ普通は林檎みたいな産業廃棄物は使わないのでちゃんと設定しないといけない.  

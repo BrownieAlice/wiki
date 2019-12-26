@@ -5,13 +5,11 @@ title = "Alice in the Machine - wiki"
 theme = "docdock"
 publishDir = "docs"
 footer = "true"
+hasCJKLanguage = true
 
 [outputs]
   home = [ "HTML", "RSS", "JSON"]
 
-[[menu.shortcuts]]
-  pre = "<h3>Links</h3>"
-  identifier = "links"
 [[menu.shortcuts]]
   name = "Blog"
   url = "https://blog.browniealice.net"
@@ -34,4 +32,4 @@ footer = "true"
   identifier = "repo"
 
 [taxonomies]
-  category = "categories"
+  tag = "tags"
