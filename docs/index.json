@@ -4,7 +4,7 @@
 	"title": "Hugo使い方",
 	"tags": ["Hugo"],
 	"description": "",
-	"content": "Hugoについて 静的Webページ変換ツールの1つ. 他にもJekyllやHexoなどが有名.\n基本的にはMarkdownで記事を書き, Hugoを起動して変換してもらって所定の静的なWebページを作る. スタイルなどを調整してやればBlogみたいなWebページもできる.\nBlogとwikiについて ブログはHugoを用いてGitHub Pages上で公開している. BlogはAlice in the Machine - Blogにある.\nwikiも同様にしてGitHub Pages上で公開している. wikiはAlice in the Machine - wikiにある.\nHugoインストール Install Hugoを参考にすれば良い. Ubuntuのバイナリインストールでいいなら\nsnap install hugo で完了.\nHugo初期設定 既にレポジトリがある場合やる必要はないが, 新たにWebページを作成するなら必要.\nHugo new site hoge で hoge ディレクトリに新たなHugoのワークスペースができる. あとは hoge ディレクトリに移動して以下をやっておく.\ngit init . git remote add origin https://github.com/\u0026lt;user-name\u0026gt;/hoge.git git add * git commit -m \u0026#34;Init Hugo.\u0026#34; git push -u origin master こうすれば後は普通に記事制作するだけで済む.\nテーマ Hugoは自分の思うテーマを選んでやらないと, 思ったようなWebページはできない. テーマは Hugo Themes|CompleteList に一覧になっている. 導入したいテーマが見つかったら\ngit submodule add https://github.com/hoge/poyo.git themes/piyo で導入する. あとはそのテーマに合わせてフロントマターや config.toml を編集する.\nconfig.toml でテーマを設定するには\ntheme = \u0026#34;piyo\u0026#34; とするだけでよい. 他にもテーマ依存の設定などもしていく.\nconfig.toml サイトについての情報などは基本的に config.toml で設定する.\n例えば以下のようにする.\nbaseURL = \u0026#34;hoge\u0026#34; languageCode = \u0026#34;ja-JP\u0026#34; title = \u0026#34;poyo\u0026#34; theme = \u0026#34;piyo\u0026#34; publishDir = \u0026#34;docs\u0026#34; disqusShortname = \u0026#34;foo\u0026#34; copyright = \u0026#34;Copyleft; 2017-2017, BrownieAlice. All rights reversed.\u0026#34; GitHub Pages Github Pagesを用いてWebサイトを公開するなら少し設定を変更する必要がある.\nGiuHub側 リポジトリのページを開いて Settings -\u0026gt; GutHub Pages -\u0026gt; Source -\u0026gt; master branch /docs folder と設定して保存する.\nするとmasterブランチの docs フォルダ 以下がWebページだとみなしてWebサイトにしてくれる.\nHugo側 config.toml を少しいじる.\npublishDir = \u0026#34;docs\u0026#34; こうすると docs フォルダ以下にHTMLなどが生成されるようになる.\n環境構築 Blog すでに中身はgit上で公開しているので\ncd ~/Document git clone https://github.com/BrownieAlice/blog.git cd blog git submodule update --init でよい. あとは ~/Document/blog 上で作業する.\nwiki Blogと同様.\ncd ~/Document git clone https://github.com/BrownieAlice/wiki.git cd wiki git submodule update --init で, あとは ~/Document/wiki 上で作業する.\n記事の制作 以下が一連の動作.\nhugo new post/hoge.md hugo server -D -w hugo undraft content/post/hoge.md hugo git add * git commit -m \u0026#34;new post hoge\u0026#34; git push origin master hugo server でローカルにサーバーを立ち上げてブラウザ上で確認できるようになる. Blogなら http://localhost:1313/blog がそのリンク先.\nそして下書き記事を正式な記事にしてコンパイルし変更をコミットする.\nカテゴリー カテゴリとしてpoとpopoを追加する場合, 記事のフロントマターを以下のように設定する.\n--- title: \u0026#34;hoge\u0026#34; date: piyo categories : - \u0026#34;po\u0026#34; - \u0026#34;popo\u0026#34; --- 参考サイト  GitHub Pagesでブログ立ち上げ - Hugoを使う GitHub Pagesの新機能、ソース設定が地味にいい 静的サイトジェネレータHugoを使ったサイト構築（コンテンツ編１） HugoとGitHub Pagesで静的サイトを公開する - Qiita Hugo + Github Pagesでブログを公開してみた - Qiita  "
+	"content": "Hugoは静的Webページ変換ツールの1つ. 他にもJekyllやHexoなどが有名.\n基本的にはMarkdownで記事を書き, Hugoを起動して変換してもらって所定の静的なWebページを作る. スタイルなどを調整してやればBlogみたいなWebページもできる.\nBlogとwikiについて ブログはHugoを用いてGitHub Pages上で公開している. BlogはAlice in the Machine - Blogにある.\nwikiも同様にしてGitHub Pages上で公開している. wikiはAlice in the Machine - wikiにある.\nHugoインストール Install Hugoを参考にすれば良い. Ubuntuのバイナリインストールでいいなら\nsnap install hugo で完了.\nHugo初期設定 既にレポジトリがある場合やる必要はないが, 新たにWebページを作成するなら必要.\nHugo new site hoge で hoge ディレクトリに新たなHugoのワークスペースができる. あとは hoge ディレクトリに移動して以下をやっておく.\ngit init . git remote add origin https://github.com/\u0026lt;user-name\u0026gt;/hoge.git git add * git commit -m \u0026#34;Init Hugo.\u0026#34; git push -u origin master こうすれば後は普通に記事制作するだけで済む.\nテーマ Hugoは自分の思うテーマを選んでやらないと, 思ったようなWebページはできない. テーマは Hugo Themes|CompleteList に一覧になっている. 導入したいテーマが見つかったら\ngit submodule add https://github.com/hoge/poyo.git themes/piyo で導入する. あとはそのテーマに合わせてフロントマターや config.toml を編集する.\nconfig.toml でテーマを設定するには\ntheme = \u0026#34;piyo\u0026#34; とするだけでよい. 他にもテーマ依存の設定などもしていく.\nconfig.toml サイトについての情報などは基本的に config.toml で設定する.\n例えば以下のようにする.\nbaseURL = \u0026#34;hoge\u0026#34; languageCode = \u0026#34;ja-JP\u0026#34; title = \u0026#34;poyo\u0026#34; theme = \u0026#34;piyo\u0026#34; publishDir = \u0026#34;docs\u0026#34; disqusShortname = \u0026#34;foo\u0026#34; copyright = \u0026#34;Copyleft; 2017-2017, BrownieAlice. All rights reversed.\u0026#34; GitHub Pages Github Pagesを用いてWebサイトを公開するなら少し設定を変更する必要がある.\nGiuHub側 リポジトリのページを開いて Settings -\u0026gt; GutHub Pages -\u0026gt; Source -\u0026gt; master branch /docs folder と設定して保存する.\nするとmasterブランチの docs フォルダ 以下がWebページだとみなしてWebサイトにしてくれる.\nHugo側 config.toml を少しいじる.\npublishDir = \u0026#34;docs\u0026#34; こうすると docs フォルダ以下にHTMLなどが生成されるようになる.\n環境構築 Blog すでに中身はgit上で公開しているので\ncd ~/Document git clone https://github.com/BrownieAlice/blog.git cd blog git submodule update --init でよい. あとは ~/Document/blog 上で作業する.\nwiki Blogと同様.\ncd ~/Document git clone https://github.com/BrownieAlice/wiki.git cd wiki git submodule update --init で, あとは ~/Document/wiki 上で作業する.\n記事の制作 以下が一連の動作.\nhugo new post/hoge.md hugo server -D -w hugo undraft content/post/hoge.md hugo git add * git commit -m \u0026#34;new post hoge\u0026#34; git push origin master hugo server でローカルにサーバーを立ち上げてブラウザ上で確認できるようになる. Blogなら http://localhost:1313/blog がそのリンク先.\nそして下書き記事を正式な記事にしてコンパイルし変更をコミットする.\nカテゴリー カテゴリとしてpoとpopoを追加する場合, 記事のフロントマターを以下のように設定する.\n--- title: \u0026#34;hoge\u0026#34; date: piyo categories : - \u0026#34;po\u0026#34; - \u0026#34;popo\u0026#34; --- 参考サイト  GitHub Pagesでブログ立ち上げ - Hugoを使う GitHub Pagesの新機能、ソース設定が地味にいい 静的サイトジェネレータHugoを使ったサイト構築（コンテンツ編１） HugoとGitHub Pagesで静的サイトを公開する - Qiita Hugo + Github Pagesでブログを公開してみた - Qiita  "
 },
 {
 	"uri": "https://wiki.browniealice.net/technote/hugo/setting_for_robust/",
@@ -21,8 +21,8 @@
 	"content": "DocDockについて DocDockはHugoのテーマの1つ. デモページのようなドキュメント用のページを作ることができる.\nリポジトリはhttps://github.com/vjeantet/hugo-theme-docdock.gitにある.\n設定項目 DocDockの機能として設定できる項目.\nタグ/カテゴリ/シリーズの利用 タグを利用するなら config.toml に\n[taxonomies] tag = \u0026#34;tags\u0026#34; と設定した上で, 各ページのフロントマター部に\ntags: - \u0026#34;Hugo\u0026#34; と記載すれば良い.\n日本語記事が主な場合, タグの一覧ページの概要を見やすくするために config.toml に\nhasCJKLanguage = true と設定したほうが良い.\nメニューバーの追加 最上部メニューバーにリンクを追加するには, config.toml に以下のように付け加えればよい.\n[[menu.shortcuts]] name = \u0026#34;Blog\u0026#34; url = \u0026#34;https://blog.browniealice.net\u0026#34; weight = 30 identifier = \u0026#34;blog\u0026#34; [[menu.shortcuts]] name = \u0026#34;wiki\u0026#34; url = \u0026#34;https://wiki.browniealice.net\u0026#34; weight = 31 identifier = \u0026#34;wiki\u0026#34; カスタマイズ 一部はDocDockのthemeを直接いじらないと設定できない.\n左のバーにコピーライトを追加した場合, layouts/partials フォルダを作り menu-footer.html を追加し中身を以下のようにする.\n\u0026lt;p style=\u0026#34;text-align:center;\u0026#34;\u0026gt; Copyright \u0026amp;copy; 2017-2019, BrownieAlice.\u0026lt;br\u0026gt; \u0026lt;a rel=\u0026#39;license\u0026#39; href=\u0026#39;http://creativecommons.org/licenses/by-sa/4.0/\u0026#39;\u0026gt; \u0026lt;img alt=\u0026#39;クリエイティブ・コモンズ・ライセンス\u0026#39; style=\u0026#39;border-width:0\u0026#39; src=\u0026#39;https://i.creativecommons.org/l/by-sa/4.0/80x15.png\u0026#39; /\u0026gt; \u0026lt;/a\u0026gt; \u0026lt;/p\u0026gt; "
 },
 {
-	"uri": "https://wiki.browniealice.net/tags/hugo/",
-	"title": "Hugo",
+	"uri": "https://wiki.browniealice.net/tags/arch-linux/",
+	"title": "Arch Linux",
 	"tags": [],
 	"description": "",
 	"content": ""
@@ -35,11 +35,32 @@
 	"content": ""
 },
 {
+	"uri": "https://wiki.browniealice.net/technote/arch/yay/",
+	"title": "Yay",
+	"tags": ["Arch Linux"],
+	"description": "",
+	"content": "YayはGo言語で書かれたAURヘルパ.\nyaourtは現在メンテナンスされていないため, 代わりのAURヘルパとしてYayがよく用いられているように思う.\nインストール GitHubのリポジトリに記載されている README.md の通り以下を実行すれば良い.\ngit clone https://aur.archlinux.org/yay.git cd yay makepkg -si 高速化 Yayを使っているときのボトルネックは, 公式リポジトリのソフトウェアをダウンロードする際に1つずつ順番に行っていくところだろう.\nYay自体はそこに関する並列化は行わないため, pacmanの代わりにpowerpillを使うようにする必要がある.1\nインストール powerpillや他に必要なreflectorとrsyncをインストールする. powerpillのみAURパッケージ.\nyay -S reflector rsync powerpill reflector設定 まずreflectorを用いて高速なサーバをいくつか取得する. 日本, 韓国, 香港, 台湾サーバから最新の20個のリストを取得して早い順に6個を表示させている.\nsudo reflector -p rsync -f 6 -l 20 -c JP -c KR -c HK -c TW 私の環境では\nServer = rsync://ftp.jaist.ac.jp/pub/Linux/ArchLinux/$repo/os/$arch Server = rsync://ftp.tsukuba.wide.ad.jp/archlinux/$repo/os/$arch Server = rsync://jpn.mirror.pkgbuild.com/packages/$repo/os/$arch Server = rsync://archlinux.cs.nctu.edu.tw/archlinux/$repo/os/$arch Server = rsync://ftp.tku.edu.tw/archlinux/$repo/os/$arch Server = rsync://hkg.mirror.rackspace.com/archlinux/$repo/os/$arch 以上のような結果が得られた. これらのサーバをパッケージの更新の際に利用するために, /etc/powerpill/powerpill.json 内の rsync の servers の項目を\n\u0026#34;servers\u0026#34;: [\u0026#34;rsync://ftp.jaist.ac.jp/pub/Linux/ArchLinux/$repo/os/$arch\u0026#34;, \u0026#34;rsync://ftp.tsukuba.wide.ad.jp/archlinux/$repo/os/$arch\u0026#34;, \u0026#34;rsync://jpn.mirror.pkgbuild.com/packages/$repo/os/$arch\u0026#34;, \u0026#34;rsync://archlinux.cs.nctu.edu.tw/archlinux/$repo/os/$arch\u0026#34;, \u0026#34;rsync://ftp.tku.edu.tw/archlinux/$repo/os/$arch\u0026#34;, \u0026#34;rsync://hkg.mirror.rackspace.com/archlinux/$repo/os/$arch\u0026#34;] 上のように書き換える.\npacman設定 このままではpowerpill実行のたびにエラーメッセージが表示されてしまう.2 脚注のサイトの通り, /etc/pacman.conf の　SigLevel の設定を\nSigLevel = PackageRequired に変更する.\nyay設定 pacmanの代わりにpowerpillを実行する場合は, コマンド引数として --pacman powerpill を与える必要がある. 毎度入力するのは面倒くさいため, エイリアスを設定しておくといいだろう. fishの場合なら, ~/.config/fish/config.fish に\nalias yay \u0026#34;yay --pacman powerpill\u0026#34; と設定しておくと, いつも通りのコマンドで並列にダウンロードがなされる.\n色付きの出力 リポジトリのREADME.mdに書かれている通り, /etc/pacman.conf内にある\n#Color のコメントアウトを外し\nColor とする.\n参考文献  Reflector - ArchWiki Powerpill - ArchWiki AUR ヘルパー - ArchWiki Jguer/yay: Yet another Yogurt - An AUR Helper written in Go    https://github.com/Jguer/yay/issues/685 \u0026#x21a9;\u0026#xfe0e;\n https://wiki.archlinux.jp/index.php/Powerpill#.E3.83.88.E3.83.A9.E3.83.96.E3.83.AB.E3.82.B7.E3.83.A5.E3.83.BC.E3.83.86.E3.82.A3.E3.83.B3.E3.82.B0 \u0026#x21a9;\u0026#xfe0e;\n   "
+},
+{
+	"uri": "https://wiki.browniealice.net/technote/arch/",
+	"title": "Arch Linux",
+	"tags": ["Arch Linux"],
+	"description": "",
+	"content": "Arch Linuxに関するまとめ.\n"
+},
+{
+	"uri": "https://wiki.browniealice.net/tags/hugo/",
+	"title": "Hugo",
+	"tags": [],
+	"description": "",
+	"content": ""
+},
+{
 	"uri": "https://wiki.browniealice.net/technote/hugo/",
 	"title": "Hugo",
 	"tags": ["Hugo"],
 	"description": "",
-	"content": "Hugoについて Hugo は静的サイトジェネレータの1つ. Markdownで記事を書いて所定のプログラムを動かせば静的なサイトが生成される.\n直接HTMLを叩かなくて済むので楽. またGitHub Pagesを用いれば簡単にWebサイトを公開できるので便利.\nBlog と wiki もHugoを用いて作成している\n"
+	"content": "Hugo は静的サイトジェネレータの1つ. Markdownで記事を書いて所定のプログラムを動かせば静的なサイトが生成される.\n直接HTMLを叩かなくて済むので楽. またGitHub Pagesを用いれば簡単にWebサイトを公開できるので便利.\nBlog と wiki もHugoを用いて作成している\n"
 },
 {
 	"uri": "https://wiki.browniealice.net/technote/",

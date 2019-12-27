@@ -6,8 +6,7 @@ tags:
 weight: 1
 ---
 
-## Hugoについて
-静的Webページ変換ツールの1つ. 他にも[Jekyll](https://jekyllrb-ja.github.io/)や[Hexo](https://hexo.io/)などが有名.  
+[Hugo](https://gohugo.io/)は静的Webページ変換ツールの1つ. 他にも[Jekyll](https://jekyllrb-ja.github.io/)や[Hexo](https://hexo.io/)などが有名.  
 基本的にはMarkdownで記事を書き, Hugoを起動して変換してもらって所定の静的なWebページを作る. スタイルなどを調整してやればBlogみたいなWebページもできる.  
 
 ## Blogとwikiについて

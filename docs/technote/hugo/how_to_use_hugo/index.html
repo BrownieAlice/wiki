@@ -5,7 +5,7 @@
     
       <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
-<meta name="revised" content="2019-12-27T01:45:43 JST">
+<meta name="revised" content="2019-12-27T13:29:11 JST">
 <title>Hugo使い方 :: Alice in the Machine - wiki</title>
 <link rel="shortcut icon" href="/images/favicon.png" type="image/x-icon" />
 <link href="/css/font-awesome.min.css" rel="stylesheet">
@@ -75,6 +75,21 @@
             <i class="fa fa-angle-down fa-lg category-icon"></i>
       </div>
         <ul>
+    <li data-nav-id="https://wiki.browniealice.net/technote/arch/" class="dd-item haschildren
+        ">
+      <div>
+      <a href="/technote/arch/">Arch Linux</a><i class="fa fa-angle-right fa-lg category-icon"></i>
+      </div>
+        <ul>
+      <li data-nav-id="https://wiki.browniealice.net/technote/arch/yay/" class="dd-item">
+        <div>
+          <a href="/technote/arch/yay/">
+            Yay
+          </a>
+        </div>
+    </li>
+        </ul>
+    </li>
     <li data-nav-id="https://wiki.browniealice.net/technote/hugo/" class="dd-item parent haschildren
         ">
       <div>
@@ -127,6 +142,9 @@ Copyright &copy; 2017-2019, BrownieAlice.<br>
           
     <option value="/technote/" >
    TechNote</option> 
+    <option value="/technote/arch/" >
+  - 
+   Arch Linux</option>
     <option value="/technote/hugo/" >
   - 
    Hugo</option> 
@@ -161,18 +179,17 @@ Copyright &copy; 2017-2019, BrownieAlice.<br>
     
     
     
-    <h2 id="hugo">Hugoについて</h2>
-<p>静的Webページ変換ツールの1つ. 他にも<a href="https://jekyllrb-ja.github.io/">Jekyll</a>や<a href="https://hexo.io/">Hexo</a>などが有名.<br>
+    <p><a href="https://gohugo.io/">Hugo</a>は静的Webページ変換ツールの1つ. 他にも<a href="https://jekyllrb-ja.github.io/">Jekyll</a>や<a href="https://hexo.io/">Hexo</a>などが有名.<br>
 基本的にはMarkdownで記事を書き, Hugoを起動して変換してもらって所定の静的なWebページを作る. スタイルなどを調整してやればBlogみたいなWebページもできる.</p>
 <h2 id="blogwiki">Blogとwikiについて</h2>
 <p>ブログは<a href="https://gohugo.io/">Hugo</a>を用いてGitHub Pages上で公開している. Blogは<a href="https://browniealice.github.io/blog/">Alice in the Machine - Blog</a>にある.<br>
 wikiも同様にしてGitHub Pages上で公開している. wikiは<a href="https://browniealice.github.io/wiki/">Alice in the Machine - wiki</a>にある.</p>
-<h2 id="hugo-1">Hugoインストール</h2>
+<h2 id="hugo">Hugoインストール</h2>
 <p><a href="https://gohugo.io/getting-started/installing">Install Hugo</a>を参考にすれば良い.
 Ubuntuのバイナリインストールでいいなら</p>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">snap install hugo
 </code></pre></div><p>で完了.</p>
-<h3 id="hugo-2">Hugo初期設定</h3>
+<h3 id="hugo-1">Hugo初期設定</h3>
 <p>既にレポジトリがある場合やる必要はないが, 新たにWebページを作成するなら必要.</p>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">Hugo new site hoge
 </code></pre></div><p>で <code>hoge</code> ディレクトリに新たなHugoのワークスペースができる. あとは <code>hoge</code> ディレクトリに移動して以下をやっておく.</p>
@@ -205,7 +222,7 @@ git push -u origin master
 <h4 id="giuhub">GiuHub側</h4>
 <p>リポジトリのページを開いて <code>Settings -&gt; GutHub Pages -&gt; Source -&gt; master branch /docs folder</code> と設定して保存する.<br>
 するとmasterブランチの <code>docs</code> フォルダ 以下がWebページだとみなしてWebサイトにしてくれる.</p>
-<h4 id="hugo-3">Hugo側</h4>
+<h4 id="hugo-2">Hugo側</h4>
 <p><code>config.toml</code> を少しいじる.</p>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-toml" data-lang="toml"><span style="color:#a6e22e">publishDir</span> = <span style="color:#e6db74">&#34;docs&#34;</span>
 </code></pre></div><p>こうすると <code>docs</code> フォルダ以下にHTMLなどが生成されるようになる.</p>

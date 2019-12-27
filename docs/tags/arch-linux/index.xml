@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Arch Linux on Alice in the Machine - wiki</title>
+    <link>https://wiki.browniealice.net/tags/arch-linux/</link>
+    <description>Recent content in Arch Linux on Alice in the Machine - wiki</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>ja-JP</language>
+    <lastBuildDate>Fri, 27 Dec 2019 01:52:11 +0900</lastBuildDate>
+    
+	<atom:link href="https://wiki.browniealice.net/tags/arch-linux/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Yay</title>
+      <link>https://wiki.browniealice.net/technote/arch/yay/</link>
+      <pubDate>Fri, 27 Dec 2019 01:52:11 +0900</pubDate>
+      
+      <guid>https://wiki.browniealice.net/technote/arch/yay/</guid>
+      <description>YayはGo言語で書かれたAURヘルパ. yaourtは現在メンテナンスされていないため, 代わりのAURヘルパとしてYayがよく用いられている</description>
+    </item>
+    
+  </channel>
+</rss>
