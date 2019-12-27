@@ -5,7 +5,7 @@
     
       <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
-<meta name="revised" content="2019-12-27T15:07:26 JST">
+<meta name="revised" content="2019-12-27T15:18:22 JST">
 <title>Yay :: Alice in the Machine - wiki</title>
 <link rel="shortcut icon" href="/images/favicon.png" type="image/x-icon" />
 <link href="/css/font-awesome.min.css" rel="stylesheet">
@@ -239,7 +239,7 @@ Server = rsync://hkg.mirror.rackspace.com/archlinux/$repo/os/$arch
 </code></pre><p>とする.</p>
 <h2 id="sudo">sudoループ</h2>
 <p>AURリポジトリにあるソフトウェアをインストールする場合, sudo権限がタイムアウトして再度パスワードを入力する必要が生じることがある.
-これを回避するために, Yayがバックグラウンドでsudoを呼び出し続け回避させるオプション<code>--sudoloop</code>がある.</p>
+これを回避するために, Yayがバックグラウンドでsudoを呼び出し続けるオプション<code>--sudoloop</code>がある.</p>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">yay --save --sudoloop
 </code></pre></div><p>上を実行して設定を変更しておくと便利だろう.</p>
 <h2 id="heading-5">参考文献</h2>
