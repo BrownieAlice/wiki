@@ -5,7 +5,7 @@
     
       <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
-<meta name="revised" content="2019-12-27T13:29:11 JST">
+<meta name="revised" content="2019-12-27T15:07:26 JST">
 <title>Yay :: Alice in the Machine - wiki</title>
 <link rel="shortcut icon" href="/images/favicon.png" type="image/x-icon" />
 <link href="/css/font-awesome.min.css" rel="stylesheet">
@@ -184,10 +184,20 @@ Copyright &copy; 2017-2019, BrownieAlice.<br>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">git clone https://aur.archlinux.org/yay.git
 cd yay
 makepkg -si
-</code></pre></div><h2 id="heading-1">高速化</h2>
+</code></pre></div><h2 id="heading-1">設定保存</h2>
+<p>Yayが内部で呼び出すpacmanやgitなどの実行コマンドを変更することができる.
+例えば, gitコマンドを<code>git-dev</code>としてYayを実行する場合は</p>
+<pre><code>yay -Syu --git git-dev
+</code></pre><p>となる.
+この設定は保存することができ, 標準では<code>$HOME/.config/yay/config.json</code>に保存される.<br>
+設定を変更して保存するには<code>--save</code>オプションを使う.
+上の設定を保存する場合には</p>
+<pre><code>yay --save --git git-dev
+</code></pre><p>とする.</p>
+<h2 id="heading-2">高速化</h2>
 <p>Yayを使っているときのボトルネックは, 公式リポジトリのソフトウェアをダウンロードする際に1つずつ順番に行っていくところだろう.<br>
 Yay自体はそこに関する並列化は行わないため, pacmanの代わりに<a href="https://xyne.archlinux.ca/projects/powerpill/">powerpill</a>を使うようにする必要がある.<sup id="fnref:1"><a href="#fn:1" class="footnote-ref" role="doc-noteref">1</a></sup></p>
-<h3 id="heading-2">インストール</h3>
+<h3 id="heading-3">インストール</h3>
 <p>powerpillや他に必要な<a href="https://xyne.archlinux.ca/projects/reflector/">reflector</a>とrsyncをインストールする.
 powerpillのみAURパッケージ.</p>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">yay -S reflector rsync powerpill
@@ -218,17 +228,21 @@ Server = rsync://hkg.mirror.rackspace.com/archlinux/$repo/os/$arch
 </code></pre><p>に変更する.</p>
 <h3 id="yay">yay設定</h3>
 <p>pacmanの代わりにpowerpillを実行する場合は, コマンド引数として <code>--pacman powerpill</code> を与える必要がある.
-毎度入力するのは面倒くさいため, エイリアスを設定しておくといいだろう.
-<a href="https://fishshell.com/">fish</a>の場合なら, <code>~/.config/fish/config.fish</code> に</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-text" data-lang="text">alias yay &#34;yay --pacman powerpill&#34;
-</code></pre></div><p>と設定しておくと, いつも通りのコマンドで並列にダウンロードがなされる.</p>
-<h2 id="heading-3">色付きの出力</h2>
+毎度入力するのは面倒くさいため, yayの設定ファイルに保存させておくといいだろう</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">yay --save --pacman powerpill
+</code></pre></div><p>上を実行すると, いつも通りのコマンドで並列にダウンロードがなされる.</p>
+<h2 id="heading-4">色付きの出力</h2>
 <p>リポジトリの<code>README.md</code>に書かれている通り, <code>/etc/pacman.conf</code>内にある</p>
 <pre><code class="language-conf" data-lang="conf">#Color
 </code></pre><p>のコメントアウトを外し</p>
 <pre><code class="language-conf" data-lang="conf">Color
 </code></pre><p>とする.</p>
-<h2 id="heading-4">参考文献</h2>
+<h2 id="sudo">sudoループ</h2>
+<p>AURリポジトリにあるソフトウェアをインストールする場合, sudo権限がタイムアウトして再度パスワードを入力する必要が生じることがある.
+これを回避するために, Yayがバックグラウンドでsudoを呼び出し続け回避させるオプション<code>--sudoloop</code>がある.</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">yay --save --sudoloop
+</code></pre></div><p>上を実行して設定を変更しておくと便利だろう.</p>
+<h2 id="heading-5">参考文献</h2>
 <ul>
 <li><a href="https://wiki.archlinux.jp/index.php/Reflector">Reflector - ArchWiki</a></li>
 <li><a href="https://wiki.archlinux.jp/index.php/Powerpill">Powerpill - ArchWiki</a></li>

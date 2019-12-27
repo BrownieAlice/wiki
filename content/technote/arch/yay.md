@@ -16,6 +16,25 @@ cd yay
 makepkg -si
 ```
 
+## 設定保存
+Yayが内部で呼び出すpacmanやgitなどの実行コマンドを変更することができる.
+例えば, gitコマンドを`git-dev`としてYayを実行する場合は
+
+```
+yay -Syu --git git-dev
+```
+
+となる.
+この設定は保存することができ, 標準では`$HOME/.config/yay/config.json`に保存される.  
+設定を変更して保存するには`--save`オプションを使う.
+上の設定を保存する場合には
+
+```
+yay --save --git git-dev
+```
+
+とする.
+
 ## 高速化
 Yayを使っているときのボトルネックは, 公式リポジトリのソフトウェアをダウンロードする際に1つずつ順番に行っていくところだろう.  
 Yay自体はそこに関する並列化は行わないため, pacmanの代わりに[powerpill](https://xyne.archlinux.ca/projects/powerpill/)を使うようにする必要がある.[^parallel]
@@ -73,14 +92,13 @@ SigLevel = PackageRequired
 
 ### yay設定
 pacmanの代わりにpowerpillを実行する場合は, コマンド引数として `--pacman powerpill` を与える必要がある.
-毎度入力するのは面倒くさいため, エイリアスを設定しておくといいだろう.
-[fish](https://fishshell.com/)の場合なら, `~/.config/fish/config.fish` に
+毎度入力するのは面倒くさいため, yayの設定ファイルに保存させておくといいだろう
 
-```text
-alias yay "yay --pacman powerpill"
+```bash
+yay --save --pacman powerpill
 ```
 
-と設定しておくと, いつも通りのコマンドで並列にダウンロードがなされる.
+上を実行すると, いつも通りのコマンドで並列にダウンロードがなされる.
 
 ## 色付きの出力
 リポジトリの`README.md`に書かれている通り, `/etc/pacman.conf`内にある
@@ -96,6 +114,16 @@ Color
 ```
 
 とする.
+
+## sudoループ
+AURリポジトリにあるソフトウェアをインストールする場合, sudo権限がタイムアウトして再度パスワードを入力する必要が生じることがある.
+これを回避するために, Yayがバックグラウンドでsudoを呼び出し続け回避させるオプション`--sudoloop`がある.
+
+```bash
+yay --save --sudoloop
+```
+
+上を実行して設定を変更しておくと便利だろう.
 
 ## 参考文献
 * [Reflector - ArchWiki](https://wiki.archlinux.jp/index.php/Reflector)
